@@ -8,23 +8,21 @@ public class Enemy : MonoBehaviour
 {
     public bool CanTakeDamage => _hp > 0;
 
-    [SerializeField] [Min(0.0f)] private float _maxHp = 100.0f;
-    [SerializeField] [Min(0.0f)] private float _hp = 100.0f;
+    [SerializeField] [Min(0.0f)] private float _maxHp = 100, _hp = 100, _layingTreshold = 80;
     [SerializeField] private Image _health;
-    [SerializeField] float _layingTreshold = 80f;
 
-    public float DEBUG = 0;
 
     public void TakeDamage(float damage)
     {
-        if (_hp - damage <= 0)
-            Death();
         _hp -= _hp - damage >= 0 ? damage : _hp;
         UpdateHpBar();
+        if (_hp <= 0)
+            Death();
     }
 
     public void Death()
     {
+        EnemyKillCounter.Instance.count++;
         Destroy(gameObject);
     }
 

@@ -6,26 +6,37 @@ public class EnemySpawner : MonoBehaviour
 {
     public float CooldownTime = 1.0f;
 
-    [SerializeField] private Transform _leftPoint;
-    [SerializeField] private Transform _rightPoint;
-    [SerializeField] private Enemy _enemy;
-    private float offset = 0.5f;
+    [SerializeField] private Transform _leftPoint, _rightPoint;
+    [SerializeField] private List<Enemy> _enemies;
+
+    private float randomOffset = 0.5f;
+    private int enemyIndex = 0;
+
     private void Awake()
     {
+        EnemyChanger.OnEnemyChange += ChooseEnemy;
         SpawnEnemy();
+    }
+
+    private void ChooseEnemy()
+    {
+        if (_enemies.Count <= enemyIndex + 1)
+            return;
+        enemyIndex++;
     }
 
     private void SpawnEnemy()
     {
-        var spawnPoint = Random.Range(0, 1) > offset ? GetSpawnPoint(_rightPoint, true)
-                                                     : GetSpawnPoint(_leftPoint, false);
-        Instantiate(_enemy, spawnPoint);
+        var spawnPoint = Random.Range(0, 1) > randomOffset
+                                                        ? GetSpawnPoint(_rightPoint, true)
+                                                        : GetSpawnPoint(_leftPoint, false);
+        Instantiate(_enemies[enemyIndex], spawnPoint);
         StartCoroutine(SpawnCooldown(CooldownTime + Random.Range(-0.8f, 5.0f)));
     }
 
     private Transform GetSpawnPoint(Transform point, bool isRight)
     {
-        offset += isRight ? 0.1f : -0.1f;
+        randomOffset += isRight ? 0.1f : -0.1f;
         return point;
     }
 

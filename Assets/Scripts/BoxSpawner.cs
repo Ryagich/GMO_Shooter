@@ -5,9 +5,7 @@ using UnityEngine;
 public class BoxSpawner : MonoBehaviour
 {
     [SerializeField] private DropBox _box;
-    [SerializeField] private float _ySpawn = 2.5f;
-    [SerializeField] private float _xLeft = -22.5f;
-    [SerializeField] private float _xRight = 22.5f;
+    [SerializeField] private float _ySpawn = 2.5f, _xLeft = -22.5f, _xRight = 22.5f;
 
     private float spawnCoolDown;
     private BoxUpdate update;

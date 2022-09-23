@@ -63,7 +63,10 @@ public class Weapon : MonoBehaviour
             return;
 
         if ((hit.collider.gameObject.GetComponent<DropBox>() != null
-          || hit.collider.gameObject.GetComponent<Enemy>() != null) && isReady && BulletsController.HasBullets)
+          || hit.collider.gameObject.GetComponent<Enemy>() != null
+          || hit.collider.gameObject.GetComponent<BossHpController>() != null
+          && hit.collider.gameObject.GetComponent<BossHpController>().CanAttacked)
+          && isReady && BulletsController.HasBullets)
             Shoot();
     }
 
@@ -75,12 +78,12 @@ public class Weapon : MonoBehaviour
         line.SetPositions(vectorArray);
     }
 
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.Mouse0) && isReady
-            && BulletsController.HasBullets)
-        {
-            Shoot();
-        }
-    }
+//    private void Update()
+//    {
+//        if (Input.GetKey(KeyCode.Mouse0) && isReady
+//            && BulletsController.HasBullets)
+//        {
+//            Shoot();
+//        }
+//    }
 }
