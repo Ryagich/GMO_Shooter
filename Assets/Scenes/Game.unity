@@ -952,9 +952,9 @@ MonoBehaviour:
   _leftPoint: {fileID: 1377041929}
   _rightPoint: {fileID: 934774304}
   _enemies:
-  - {fileID: 1666085693365333525, guid: b296d08904c738647a2c54e3c9504b20, type: 3}
-  - {fileID: 1461355970946356771, guid: 5f47a10d95e00c841924b83995b3a96d, type: 3}
-  - {fileID: 6069700556547221075, guid: c5893822d7453f74ab9e456d42cff954, type: 3}
+  - {fileID: 1666085693365333535, guid: b296d08904c738647a2c54e3c9504b20, type: 3}
+  - {fileID: 1461355970946356777, guid: 5f47a10d95e00c841924b83995b3a96d, type: 3}
+  - {fileID: 6069700556547221081, guid: c5893822d7453f74ab9e456d42cff954, type: 3}
 --- !u!114 &610379805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -994,6 +994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d8f9be0d20f2742afd673e33f9b3ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Count: 0
 --- !u!1 &614526443
 GameObject:
   m_ObjectHideFlags: 0
@@ -12254,7 +12255,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3626943, y: 1}
+    m_SensorSize: {x: 1.7788697, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

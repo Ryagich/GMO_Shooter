@@ -5,13 +5,12 @@ using UnityEngine.Events;
 
 public class Weapon : MonoBehaviour
 {
-    [Min(0.0f)] public float AttackCooldown = 0.5f;
-    [Min(0.0f)] public float Damage = 5.0f;
+    [Min(0.0f)] public float AttackCooldown = 0.5f, Damage = 5.0f;
     public BulletsController BulletsController;
 
     [SerializeField] protected Transform _shootPoint;
     [SerializeField] protected Bullet _bullet;
-    [SerializeField] private LayerMask mask = new LayerMask();
+    [SerializeField] protected LayerMask mask = new LayerMask();
 
     protected bool isReady = true;
     protected Cinemachine.CinemachineCollisionImpulseSource inpulse;
@@ -19,8 +18,7 @@ public class Weapon : MonoBehaviour
     private LineRenderer line;
 
     [Header("Bullet stats")]
-    [SerializeField, Min(0.0f)] protected float _speed = 1.0f;
-    [SerializeField, Min(0.0f)] protected float _time = 1.0f;
+    [SerializeField, Min(0.0f)] protected float _speed = 1.0f, _time = 1.0f;
 
     private void Awake()
     {
@@ -35,7 +33,7 @@ public class Weapon : MonoBehaviour
     public virtual void Shoot()
     {
         var bullet = Instantiate(_bullet, _shootPoint.position, _shootPoint.rotation);
-        bullet.SetStats(_speed, Damage, _time);
+        bullet.SetStats(_speed, Damage, _time, mask);
 
         inpulse.GenerateImpulse();
         isReady = false;
@@ -57,16 +55,12 @@ public class Weapon : MonoBehaviour
         var offset = _speed * _time * Time.fixedDeltaTime;
         var hit = Physics2D.Raycast(_shootPoint.position, direction, offset, mask);
 
-        Debug.DrawRay(_shootPoint.position, direction * offset, Color.white);
+        //Debug.DrawRay(_shootPoint.position, direction * offset, Color.white);
 
         if (hit.collider == null)
             return;
 
-        if ((hit.collider.gameObject.GetComponent<DropBox>() != null
-          || hit.collider.gameObject.GetComponent<Enemy>() != null
-          || hit.collider.gameObject.GetComponent<BossHpController>() != null
-          && hit.collider.gameObject.GetComponent<BossHpController>().CanAttacked)
-          && isReady && BulletsController.HasBullets)
+        if (isReady && BulletsController.HasBullets)
             Shoot();
     }
 
@@ -77,13 +71,4 @@ public class Weapon : MonoBehaviour
         vectorArray[1] = _shootPoint.position + transform.right * _speed * _time * Time.fixedDeltaTime;
         line.SetPositions(vectorArray);
     }
-
-//    private void Update()
-//    {
-//        if (Input.GetKey(KeyCode.Mouse0) && isReady
-//            && BulletsController.HasBullets)
-//        {
-//            Shoot();
-//        }
-//    }
 }

@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [Min(0.0f)] private float speed = 1.0f;
-    [Min(0.0f)] private float damage = 5.0f;
-    [Min(0.0f)] private float time = 1.0f;
-
+    private float speed = 1.0f, damage = 5.0f, time = 1.0f;
+    private LayerMask mask;
     private new Rigidbody2D rigidbody2D;
 
     private void Start()
@@ -16,8 +14,9 @@ public class Bullet : MonoBehaviour
         StartCoroutine(DestroyAfterTime(time));
     }
 
-    public void SetStats(float speedV, float damageV, float time)
+    public void SetStats(float speedV, float damageV, float time, LayerMask mask)
     {
+        this.mask = mask;
         speed = speedV;
         damage = damageV;
         this.time = time;
@@ -31,13 +30,9 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<Enemy>() != null
-        && !collision.gameObject.GetComponent<Enemy>().CanTakeDamage
-         || collision.gameObject.GetComponent<DropBox>() != null
-        && !collision.gameObject.GetComponent<DropBox>().CanBreak)
-            return;
-        collision.gameObject.GetComponent<Enemy>()?.TakeDamage(damage);
-        collision.gameObject.GetComponent<DropBox>()?.Break();
+        var damageable = collision.gameObject.GetComponent<Damageable>();
+        if (damageable != null && damageable.CanTakeDamage)
+            damageable.TakeDamage(damage);        
         StopCoroutine("DestroyAfterTime");
         Destroy(gameObject);
     }

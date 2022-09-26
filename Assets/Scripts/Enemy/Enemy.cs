@@ -1,46 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-
+[RequireComponent(typeof(EnemyHp))]
 public class Enemy : MonoBehaviour
 {
-    public bool CanTakeDamage => _hp > 0;
+    private EnemyHp hp;
 
-    [SerializeField] [Min(0.0f)] private float _maxHp = 100, _hp = 100, _layingTreshold = 80;
-    [SerializeField] private Image _health;
-
-
-    public void TakeDamage(float damage)
+    private void Start()
     {
-        _hp -= _hp - damage >= 0 ? damage : _hp;
-        UpdateHpBar();
-        if (_hp <= 0)
-            Death();
+        hp = GetComponent<EnemyHp>();
+        GetComponent<EnemyHp>().OnDeath += Death;
+        if (GetComponent<Layer>() != null)
+            GetComponent<Layer>().OnLayed += Death;
+
     }
 
-    public void Death()
+    private void Death()
     {
-        EnemyKillCounter.Instance.count++;
+        if (EnemyKillCounter.Instance != null)
+        EnemyKillCounter.Instance.Count++;
         Destroy(gameObject);
-    }
-
-    private void UpdateHpBar()
-    {
-        _health.fillAmount = _hp / _maxHp;
-    }
-
-    private void Update()
-    {
-        if (IsLaying())
-            Death();
-    }
-
-    private bool IsLaying()
-    {
-        var d = Mathf.DeltaAngle(transform.eulerAngles.z, 0);        
-        var r = Mathf.Abs(d) > _layingTreshold;
-        return r;
     }
 }

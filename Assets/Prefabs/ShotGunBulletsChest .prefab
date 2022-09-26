@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5044393443085592627}
   - component: {fileID: 1326575943940395834}
   - component: {fileID: 3323849815528777356}
+  - component: {fileID: 1394493035055443821}
   m_Layer: 11
   m_Name: 'ShotGunBulletsChest '
   m_TagString: Untagged
@@ -30,6 +31,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.83, y: -3.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7443475731869359031}
   m_Father: {fileID: 0}
@@ -46,6 +48,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -145,13 +148,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0263a11f905995a40bf0e01b2f3ca952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanBreak: 1
   _dropItem: {fileID: -2000586500838327420, guid: c8613156599d07c40998f772e9c1b0e3, type: 3}
   _yTarget: -1
   _explosion: 5
   _speed: 1
   _distanceTreshold: 0.01
   _explosionEffect: {fileID: 4628457468360153286, guid: 77d944afdea510841bbdc2d32ab60160, type: 3}
+--- !u!114 &1394493035055443821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069709281310422831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b7a5c934d96f654c8149501c0785cba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanTakeDamage: 1
 --- !u!1 &7443475731869359025
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,6 +194,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7875500024553308574}
   m_RootOrder: 0
@@ -194,6 +210,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
     public float CooldownTime = 1.0f;
 
     [SerializeField] private Transform _leftPoint, _rightPoint;
-    [SerializeField] private List<Enemy> _enemies;
+    [SerializeField] private List<GameObject> _enemies;
 
     private float randomOffset = 0.5f;
     private int enemyIndex = 0;

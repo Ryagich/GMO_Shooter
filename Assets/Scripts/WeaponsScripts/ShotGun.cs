@@ -16,7 +16,7 @@ public class ShotGun : Weapon
             var addedOffset = Random.Range(0, countBullets) * Random.Range(-_spread, _spread);            
             var newRotation = _shootPoint.rotation * Quaternion.Euler(0, 0, addedOffset);
             var bullet = Instantiate(_bullet, _shootPoint.position, newRotation);
-            bullet.SetStats(_speed, Damage, _time);
+            bullet.SetStats(_speed, Damage, _time, mask);
         }
         inpulse.GenerateImpulse();
 

@@ -3,10 +3,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Damageable))]
 public class DropBox : MonoBehaviour
 {
-    public bool CanBreak = true;
-
     [SerializeField] private Collectable _dropItem;
     [SerializeField] private float _yTarget = -1.0f;
     [SerializeField, Min(1.0f)] private float _explosion = 5.0f;
@@ -18,6 +17,13 @@ public class DropBox : MonoBehaviour
     private float lifeTime = 6;
     private Vector2 target = new Vector2();
     private BoxUpdate update;
+    private Damageable damageble;
+
+    private void Start()
+    {
+        damageble = GetComponent<Damageable>();
+        damageble.OnDamage += Break;
+    }
 
     public void SetValues(BoxUpdate update)
     {
@@ -46,13 +52,12 @@ public class DropBox : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void Break()
+    public void Break(float _)
     {
         Instantiate(_explosionEffect, transform.position,transform.rotation);
-        CanBreak = false;        
+        damageble.CanTakeDamage = false;   
         for (int i = 0; i < itemCount; i++)
         {
-            
             var pref = Instantiate(_dropItem, transform.position,
                                               transform.rotation);
             pref.SetValues(update);
