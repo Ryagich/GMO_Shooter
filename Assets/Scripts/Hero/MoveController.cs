@@ -18,7 +18,7 @@ public class MoveController : MonoBehaviour
     private void FixedUpdate()
     {
         //rigidbody2D.AddForce(movement * Speed * Time.deltaTime);
-        physic.velocity = movement * _speed * Time.deltaTime;
+        physic.velocity = movement * _speed;
     }
 
     private void Update()

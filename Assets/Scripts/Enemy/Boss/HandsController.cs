@@ -24,7 +24,6 @@ public class HandsController : MonoBehaviour
     {
         var hand = Instantiate(_handPref, _handsPoint);
         CurrHandsCount++;
-        hand.GetComponent<HandMovementController>().SetArea(_area);
     }
 
     private void DeleteHand()

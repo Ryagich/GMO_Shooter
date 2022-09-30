@@ -4,41 +4,33 @@ using UnityEngine;
 
 public class BossMovementController : MonoBehaviour
 {
-    [SerializeField] private float _speed = 1.0f, _range = 2.0f;
+    
+    [SerializeField] private float _absoluteSpeed = 1.0f;
+    [SerializeField] private float _range = 2.0f;
     [SerializeField] private Collider2D _area;
 
-    private float xBound, yTopBound,yDownBound;
-    private Vector2 target;
+    private Bounds bounds;
+    private Vector3 target;
+    private Rigidbody2D rb;
+
+
+    private const float DistanceTreshold = 0.3f;
 
     private void Awake()
     {
-        xBound = _area.bounds.size.x / 2;
-        yTopBound = _area.bounds.size.y / 2 + _area.gameObject.transform.position.y;
-        yDownBound = _area.bounds.size.y / 2 - _area.gameObject.transform.position.y;
+        bounds = _area.bounds;
+        rb = GetComponent<Rigidbody2D>();
+        target = GetNextTarget();
     }
 
     private void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target,
-                                                   _speed * Time.deltaTime);
-        if (target.Equals(transform.position))
-            target = new Vector2(GetXCoordinate(target.x), GetYCoordinate(target.y));
+      
     }
 
-    public void SetTarget(Vector2 target)
+    private Vector3 GetNextTarget()
     {
-        this.target = target;
+        return RandomExtentions.InBounds(bounds);
     }
 
-    private float GetXCoordinate(float coordinate)
-    {
-        var random = Random.Range(coordinate - _range, coordinate + _range);
-        return -xBound <= random && random <= xBound ? random : GetXCoordinate(coordinate);//Mathf.Clamp(random, -_xBound, _xBound);//
-    }
-
-    private float GetYCoordinate(float coordinate)
-    {
-        var random = Random.Range(coordinate - _range, coordinate + _range);
-        return yDownBound <= random && random <= yTopBound ? random : GetYCoordinate(coordinate);
-    }
 }

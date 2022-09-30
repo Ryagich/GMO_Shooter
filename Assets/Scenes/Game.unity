@@ -6447,7 +6447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd6ba13f7bc5cf4b8cd429fdb1024e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 100
+  _speed: 5
 --- !u!70 &951070257
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -12255,7 +12255,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7788697, y: 1}
+    m_SensorSize: {x: 1.7791411, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
