@@ -5,20 +5,26 @@ using UnityEngine;
 public class EnemyMovementController : MonoBehaviour
 {
     [SerializeField] private float _speed = 1.0f;
+    [SerializeField] private float _acceleration = 1.0f;
+    [SerializeField] private float _rotationLerp = 1.0f;
 
     private Transform player;
     private bool isRight;
 
+    private Rigidbody2D rb;
+
     private void Awake()
     {
+        rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         isRight = player.position.x < transform.position.x;
     }
 
     private void FixedUpdate()
     {
-        transform.position = Vector2.MoveTowards(transform.position,
-            new Vector2(player.position.x, transform.position.y), _speed * Time.deltaTime);
+        var targetVelocity = (isRight ? Vector2.right : Vector2.left) * _speed;
+        rb.velocity = Vector2.MoveTowards(rb.velocity, targetVelocity, _acceleration * Time.deltaTime);
+        rb.MoveRotation(FpsLerp.Lerp(rb.rotation, 0, _rotationLerp, Time.deltaTime));
         Flip();
     }
 

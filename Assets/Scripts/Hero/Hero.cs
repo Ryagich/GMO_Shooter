@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class Hero : MonoBehaviour
 {
     public static event Action OnHeroDeied;
-    [SerializeField] [Min(1.0f)] private float _maxHp = 100.0f;
-    [SerializeField] [Min(1.0f)] private float _hp = 100.0f;
+    [SerializeField][Min(1.0f)] private float _maxHp = 100.0f;
+    [SerializeField][Min(1.0f)] private float _hp = 100.0f;
     [SerializeField] private Image _health;
 
     private CoinsManager coinsManager;
@@ -50,21 +50,26 @@ public class Hero : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         var collisionObj = collision.gameObject;
-        if (collisionObj.layer == LayerMask.NameToLayer("Collectable"))
+        if (collisionObj.layer != LayerMask.NameToLayer("Collectable"))
+            return;
+        var collectable = collisionObj.GetComponent<Collectable>();
+        if (collectable == null)
+            return;
+        switch (collectable.CollectableType)
         {
-            var coin = collisionObj.GetComponent<Coin>();
-            var shotGunDropBullet = collisionObj.GetComponent<ShotGunDropBullet>();
-            var rifleDropBullet = collisionObj.GetComponent<RifleDropBullet>();
-            var heart = collisionObj.GetComponent<Heart>();
-
-            if (coin != null)
-                coinsManager.AddCoins(coin.GetCoins());
-            if (shotGunDropBullet != null)
-                weaponInventory.AddShotGunBullets(shotGunDropBullet.GetBullets());
-            if (rifleDropBullet != null)
-                weaponInventory.AddRifleBullets(rifleDropBullet.GetBullets());
-            if (heart != null)
-                TakeHp(heart.GetHp());
+            case Collectable.Type.Heart:
+                // TODO: ADD HP
+                break;
+            case Collectable.Type.Coin:
+                coinsManager.AddCoins(collectable.Value);
+                break;
+            case Collectable.Type.ShotGunBullets:
+                weaponInventory.AddBullets(weaponInventory.ShotGun, collectable.Value);
+                break;
+            case Collectable.Type.RifleBullets:
+                weaponInventory.AddBullets(weaponInventory.Rifle, collectable.Value);
+                break;
         }
+        Destroy(collectable.gameObject);
     }
 }

@@ -1,145 +1,76 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Cinemachine;
 using UnityEngine;
 
+[RequireComponent(typeof(CinemachineImpulseSource))]
+[RequireComponent(typeof(BulletsShower))]
 public class WeaponInventory : MonoBehaviour
 {
     public Weapon Pistol { get; private set; }
     public Weapon Rifle { get; private set; }
     public Weapon ShotGun { get; private set; }
-    public Weapon CurrentWeapon { get; private set; }
+    public Weapon ActiveWeapon { get; private set; }
+
 
     [SerializeField] private Transform _gunPoint;
 
-    private Weapons numWeapon;
     private BulletsShower bulletsShower;
+    private CinemachineImpulseSource impulseSource;
+    private List<Weapon> weapons;
 
     private void Awake()
     {
-        Pistol = Instantiate(Data.SelectedPistol, _gunPoint);
-        Rifle = Instantiate(Data.SelectedRifle, _gunPoint);
-        ShotGun = Instantiate(Data.SelectedShotGun, _gunPoint);
-
-        Rifle.gameObject.SetActive(false);
-        ShotGun.gameObject.SetActive(false);
-        Pistol.gameObject.SetActive(false);
-        ChangeWeapon(Pistol);
-
-        Pistol.BulletsController = new BulletsController(int.MaxValue, int.MaxValue);
-        Rifle.BulletsController = new BulletsController(0, 60);
-        ShotGun.BulletsController = new BulletsController(0, 30);
-
-        Pistol.SetInpulse(GetComponent<Cinemachine.CinemachineCollisionImpulseSource>());
-        ShotGun.SetInpulse(GetComponent<Cinemachine.CinemachineCollisionImpulseSource>());
-        Rifle.SetInpulse(GetComponent<Cinemachine.CinemachineCollisionImpulseSource>());
-
         bulletsShower = GetComponent<BulletsShower>();
-        bulletsShower.UpdateText(Rifle.BulletsController.CurrentCount,
-                               ShotGun.BulletsController.CurrentCount);//костыль
-
-        Rifle.BulletsController.OnHaveBullets.AddListener(a => { CheckRifleBullets(a); });
-        ShotGun.BulletsController.OnHaveBullets.AddListener(a => { CheckShotGunBullets(a); });
+        impulseSource = GetComponent<CinemachineImpulseSource>();
+        weapons = new List<Weapon>();
     }
 
-    private void CheckRifleBullets(bool hasBullets)
+    private void Start()
     {
-        if (!hasBullets && numWeapon == Weapons.Rifle)
-            ChangeWeaponToShotGun();
+        CreateWeapons();
+        SetActiveWeapon(Pistol);
     }
 
-    private void CheckShotGunBullets(bool hasBullets)
+    private void CreateWeapons()
     {
-        if (!hasBullets && numWeapon == Weapons.ShotGun)
-            ChangeWeaponToRifle();
+        Pistol = CreateWeapon(Data.SelectedPistol);
+        Rifle = CreateWeapon(Data.SelectedRifle);
+        ShotGun = CreateWeapon(Data.SelectedShotGun);
+        weapons.Sort((a, b) => b.DPS.CompareTo(a.DPS));
     }
 
-    private void Update()
+    private Weapon CreateWeapon(Weapon weaponPrefab)
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            ChangeWeaponToPistol();
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-            ChangeWeaponToRifle();
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-            ChangeWeaponToShotGun();
-    }
-    public void AddRifleBullets(int value)
-    {
-        Rifle.BulletsController.AddBullets(value);
-        if (numWeapon == Weapons.Pistol)
-        {
-            ChangeWeapon(Rifle);
-            numWeapon = Weapons.Rifle;
-        }
+        var w = Instantiate(weaponPrefab, _gunPoint);
+        w.SetImpulseSource(impulseSource);
+        w.BulletsController.OnOutOfBullets += SetBestWeapon;
+        weapons.Add(w);
+        return w;
     }
 
-    public void AddShotGunBullets(int value)
+    private void SetActiveWeapon(Weapon activeWeapon)
     {
-        ShotGun.BulletsController.AddBullets(value);
-        if (numWeapon == Weapons.Pistol)
-        {
-            ChangeWeapon(ShotGun);
-            numWeapon = Weapons.ShotGun;
-        }
+        foreach (var w in weapons)
+            w.gameObject.SetActive(false);
+        activeWeapon.gameObject.SetActive(true);
     }
 
-    #region Changers
-    private void ChangeWeaponToShotGun()
+    private void SetBestWeapon()
     {
-        if (ShotGun.BulletsController.HasBullets)
-        {
-            if (numWeapon != Weapons.ShotGun)
-            {
-                ChangeWeapon(ShotGun);
-                numWeapon = Weapons.ShotGun;
-            }
-            else if (numWeapon == Weapons.ShotGun)
-                return;
-        }
-        else if (numWeapon == Weapons.Rifle && Rifle.BulletsController.HasBullets)
-            return;
-        else
-            ChangeWeaponToPistol();
+        SetActiveWeapon(GetBestAvailableWeapon());
     }
 
-    private void ChangeWeaponToRifle()
+    private Weapon GetBestAvailableWeapon()
     {
-        if (Rifle.BulletsController.HasBullets)
-        {
-            if (numWeapon != Weapons.Rifle)
-            {
-                ChangeWeapon(Rifle);
-                numWeapon = Weapons.Rifle;
-            }
-            else if (numWeapon == Weapons.Rifle)
-                return;
-        }
-        else if (numWeapon == Weapons.ShotGun && ShotGun.BulletsController.HasBullets)
-            return;
-        else
-            ChangeWeaponToPistol();
+        var w = weapons.Where(w => w.BulletsController.HasBullets).ToList();
+        return w.First();
     }
 
-    private void ChangeWeaponToPistol()
+    public void AddBullets(Weapon w, int count)
     {
-        if (numWeapon != Weapons.Pistol)
-        {
-            ChangeWeapon(Pistol);
-            numWeapon = Weapons.Pistol;
-        }
+        w.BulletsController.AddBullets(count);
+        SetBestWeapon();
     }
-
-    private void ChangeWeapon(Weapon weapon)
-    {
-        CurrentWeapon?.gameObject.SetActive(false);
-        weapon.gameObject.SetActive(true);
-        CurrentWeapon = weapon;
-    }
-    #endregion
-}
-
-public enum Weapons
-{
-    Pistol = 0,
-    Rifle = 1,
-    ShotGun
 }

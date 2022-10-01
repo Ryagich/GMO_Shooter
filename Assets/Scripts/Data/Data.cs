@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public static class Data
-{ 
+{
     public static Weapon SelectedPistol;
     public static Weapon SelectedRifle;
     public static Weapon SelectedShotGun;

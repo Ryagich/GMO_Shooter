@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
-
 
 public class BulletsShower : MonoBehaviour
 {
@@ -13,13 +11,13 @@ public class BulletsShower : MonoBehaviour
 
     private void Start()
     {
-        WeaponInventory.Rifle.BulletsController.OnBulletCountUpdated.AddListener(a => { RifleText.text = a.ToString(); });
-        WeaponInventory.ShotGun.BulletsController.OnBulletCountUpdated.AddListener(a => { ShotGunText.text = a.ToString(); });
-    }
-
-    public void UpdateText(int automateBullets, int shotGunBullets)
-    {
-        RifleText.text = automateBullets.ToString();
-        ShotGunText.text = shotGunBullets.ToString();
+        WeaponInventory
+            .Rifle
+            .BulletsController
+            .OnBulletCountUpdated += (a => { RifleText.text = a.ToString(); });
+        WeaponInventory
+            .ShotGun
+            .BulletsController
+            .OnBulletCountUpdated += (a => { ShotGunText.text = a.ToString(); });
     }
 }

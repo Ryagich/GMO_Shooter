@@ -10,19 +10,19 @@ public class MaximumTakerFromWeapons : MonoBehaviour
 
     public float GetMaxSpeed()
     {
-        return Mathf.Max(GetMaxSpeedFromWeaponType(_pistolsManager.WeaponTypes),
-                         GetMaxSpeedFromWeaponType(_rifleManager.WeaponTypes),
-                         GetMaxSpeedFromWeaponType(_shotGunManager.WeaponTypes));
+        return Mathf.Max(GetMaxSpeed(_pistolsManager.WeaponTypes),
+                         GetMaxSpeed(_rifleManager.WeaponTypes),
+                         GetMaxSpeed(_shotGunManager.WeaponTypes));
     }
 
     public float GetMaxDamage()
     {
-        return Mathf.Max(GetMaxDamageFromWeaponType(_pistolsManager.WeaponTypes),
-                         GetMaxDamageFromWeaponType(_rifleManager.WeaponTypes),
-                         GetMaxDamageFromWeaponType(_shotGunManager.WeaponTypes));
+        return Mathf.Max(GetMaxDamage(_pistolsManager.WeaponTypes),
+                         GetMaxDamage(_rifleManager.WeaponTypes),
+                         GetMaxDamage(_shotGunManager.WeaponTypes));
     }
 
-    private float GetMaxSpeedFromWeaponType(WeaponInfo[] weapons)
+    private float GetMaxSpeed(WeaponInfo[] weapons)
     {
         var maxSpeed = 0.0f;
         for (var i = 0; i < weapons.Length; i++)
@@ -30,7 +30,7 @@ public class MaximumTakerFromWeapons : MonoBehaviour
         return maxSpeed;
     }
 
-    private float GetMaxDamageFromWeaponType(WeaponInfo[] weapons)
+    private float GetMaxDamage(WeaponInfo[] weapons)
     {
         var maxAttack = 0.0f;
         for (var i = 0; i < weapons.Length; i++)

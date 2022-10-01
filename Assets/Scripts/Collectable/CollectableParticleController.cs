@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollectableParticalController : MonoBehaviour
+public class CollectableParticleController : MonoBehaviour
 {
     [SerializeField] private float _treshold = 0.01f;
 
@@ -15,13 +15,9 @@ public class CollectableParticalController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        EnableParticalSystem(rb.velocity.SqrMagnitude() > _treshold);
-    }
-
-    public void EnableParticalSystem(bool enable)
-    {
-        particle.enableEmission = enable;
+        var emission = particle.emission;
+        emission.enabled = rb.velocity.SqrMagnitude() > _treshold;
     }
 }

@@ -6424,10 +6424,10 @@ GameObject:
   - component: {fileID: 951070262}
   - component: {fileID: 951070263}
   - component: {fileID: 951070264}
-  - component: {fileID: 951070265}
   - component: {fileID: 951070268}
   - component: {fileID: 951070267}
   - component: {fileID: 951070266}
+  - component: {fileID: 951070269}
   m_Layer: 3
   m_Name: Hero
   m_TagString: Player
@@ -6571,102 +6571,6 @@ MonoBehaviour:
   RifleText: {fileID: 2106379962}
   ShotGunText: {fileID: 1761639401}
   WeaponInventory: {fileID: 951070262}
---- !u!114 &951070265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 951070255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd438dd108a0f284aa931a2da434f1d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ImpulseDefinition:
-    m_ImpulseChannel: -1
-    m_ImpulseShape: 0
-    m_CustomImpulseShape:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_ImpulseDuration: 0.2
-    m_ImpulseType: 3
-    m_DissipationRate: 0
-    m_RawSignal: {fileID: 11400000, guid: 18c6713b9f666db48a46712b40b42be0, type: 2}
-    m_AmplitudeGain: 1
-    m_FrequencyGain: 1
-    m_RepeatMode: 0
-    m_Randomize: 1
-    m_TimeEnvelope:
-      m_AttackShape:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: -0.06077968
-          outSlope: -0.06077968
-          tangentMode: 34
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 1
-          value: 0.9528961
-          inSlope: -0.06077968
-          outSlope: -0.06077968
-          tangentMode: 34
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      m_DecayShape:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: -0.01034588
-          outSlope: -0.01034588
-          tangentMode: 34
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 1
-          value: 0.990818
-          inSlope: -0.01034588
-          outSlope: -0.01034588
-          tangentMode: 34
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      m_AttackTime: 0.01
-      m_SustainTime: 0.2
-      m_DecayTime: 0.7
-      m_ScaleWithImpact: 1
-      m_HoldForever: 0
-    m_ImpactRadius: 100000
-    m_DirectionMode: 0
-    m_DissipationMode: 2
-    m_DissipationDistance: 1000
-    m_PropagationSpeed: 343
-  m_DefaultVelocity: {x: 0, y: -1, z: 0}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IgnoreTag: 
-  m_UseImpactDirection: 1
-  m_ScaleImpactWithMass: 0
-  m_ScaleImpactWithSpeed: 0
 --- !u!199 &951070266
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -11467,6 +11371,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178f2b1ae089fad4ca6843fab5ec84c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &951070269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951070255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 2
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 0
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
 --- !u!1 &992936441
 GameObject:
   m_ObjectHideFlags: 0
@@ -12255,7 +12212,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7791411, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

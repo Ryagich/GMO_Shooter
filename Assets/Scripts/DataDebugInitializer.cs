@@ -19,7 +19,7 @@ public class DataDebugInitializer : MonoBehaviour
     public BoxUpdate HpBoxUpdate;
     public int DescentsCount = 0;
 
-    private void Start()
+    public void SetData()
     {
         Data.SelectedPistol = SelectedPistol;
         Data.SelectedRifle = SelectedRifle;

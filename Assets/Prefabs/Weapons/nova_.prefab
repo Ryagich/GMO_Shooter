@@ -26,6 +26,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.746, y: 0.124, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1449522397443388233}
   m_RootOrder: 0
@@ -42,6 +43,7 @@ GameObject:
   - component: {fileID: 2636001190444945663}
   - component: {fileID: 7256442235204268376}
   - component: {fileID: -5371478363808875547}
+  - component: {fileID: 8450033224239048125}
   m_Layer: 0
   m_Name: nova_
   m_TagString: Untagged
@@ -59,6 +61,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2651155375387037630}
   m_Father: {fileID: 0}
@@ -75,6 +78,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -128,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackCooldown: 0.8
-  Damage: 5
+  Damage: 50
   _shootPoint: {fileID: 2651155375387037630}
   _bullet: {fileID: 6152613892789413122, guid: d2033d714213a3e478c47b4678860bbc, type: 3}
   mask:
@@ -136,7 +140,8 @@ MonoBehaviour:
     m_Bits: 2112
   _speed: 500
   _time: 0.2
-  _baseCountBullets: 10
+  _shakeAmplitude: 0.5
+  _baseBulletCount: 10
   _rangeCount: 2
   _spread: 1.5
 --- !u!120 &-5371478363808875547
@@ -150,6 +155,7 @@ LineRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 0
+  m_StaticShadowCaster: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -237,3 +243,18 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &8450033224239048125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8012004432759708748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d836b9e4fcd013342ac54f7f2ddd8cec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentCount: 0
+  _maxCount: 30
+  isInfinite: 0

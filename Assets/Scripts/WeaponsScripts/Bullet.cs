@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private float speed = 1.0f, damage = 5.0f, time = 1.0f;
-    private LayerMask mask;
+    private float speed = 1.0f;
+    private float damage = 5.0f;
+    private float time = 1.0f;
+
     private new Rigidbody2D rigidbody2D;
 
     private void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
-        StartCoroutine(DestroyAfterTime(time));
+        Destroy(gameObject, time);
     }
 
-    public void SetStats(float speedV, float damageV, float time, LayerMask mask)
+    public void SetStats(float speedV, float damageV, float time)
     {
-        this.mask = mask;
         speed = speedV;
         damage = damageV;
         this.time = time;
@@ -24,7 +25,6 @@ public class Bullet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //transform.Translate(Vector2.right * speed * Time.deltaTime);
         rigidbody2D.velocity = transform.right * speed * Time.deltaTime;
     }
 
@@ -32,14 +32,7 @@ public class Bullet : MonoBehaviour
     {
         var damageable = collision.gameObject.GetComponent<Damageable>();
         if (damageable != null && damageable.CanTakeDamage)
-            damageable.TakeDamage(damage);        
-        StopCoroutine("DestroyAfterTime");
-        Destroy(gameObject);
-    }
-
-    private IEnumerator DestroyAfterTime(float time)
-    {
-        yield return new WaitForSeconds(time);
+            damageable.TakeDamage(damage);
         Destroy(gameObject);
     }
 }
