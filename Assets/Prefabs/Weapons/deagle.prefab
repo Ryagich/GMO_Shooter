@@ -140,6 +140,7 @@ MonoBehaviour:
     m_Bits: 2112
   _speed: 200
   _time: 1
+  _shakeAmplitude: 0.1
 --- !u!120 &779725385360650806
 LineRenderer:
   m_ObjectHideFlags: 0
