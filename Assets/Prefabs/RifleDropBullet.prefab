@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 820269950391224588}
   - component: {fileID: 820269950391224595}
   - component: {fileID: 820269950391224594}
-  - component: {fileID: -713330011006676820}
   - component: {fileID: 935462482946618358}
-  - component: {fileID: -7134599879527028715}
   - component: {fileID: 2027711501259536184}
+  - component: {fileID: -713330011006676820}
+  - component: {fileID: -7134599879527028715}
   m_Layer: 8
   m_Name: RifleDropBullet
   m_TagString: Untagged
@@ -85,19 +85,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3641045, y: 0.5580077}
   m_EdgeRadius: 0
---- !u!114 &-713330011006676820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 820269950391224590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a479de7f534cb7499116d4572caffea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollectableType: 3
 --- !u!198 &935462482946618358
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4805,6 +4792,32 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &2027711501259536184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820269950391224590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f1168f7c1e755418e90ca4300109a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _treshold: 0.01
+--- !u!114 &-713330011006676820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820269950391224590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a479de7f534cb7499116d4572caffea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollectableType: 3
 --- !u!199 &-7134599879527028715
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -4826,7 +4839,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: fc0b53c93eb186e42b150ee5e0e3ddfd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4877,19 +4890,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &2027711501259536184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 820269950391224590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1f1168f7c1e755418e90ca4300109a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _treshold: 0.01
 --- !u!1 &7910385375545604105
 GameObject:
   m_ObjectHideFlags: 0

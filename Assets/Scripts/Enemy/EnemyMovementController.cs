@@ -23,7 +23,9 @@ public class EnemyMovementController : MonoBehaviour
     private void FixedUpdate()
     {
         var targetVelocity = (isRight ? Vector2.right : Vector2.left) * _speed;
-        rb.velocity = Vector2.MoveTowards(rb.velocity, targetVelocity, _acceleration * Time.deltaTime);
+        var xVel = Vector2.MoveTowards(rb.velocity, targetVelocity, _acceleration * Time.deltaTime);
+        xVel.y = rb.velocity.y;
+        rb.velocity = xVel;
         rb.MoveRotation(FpsLerp.Lerp(rb.rotation, 0, _rotationLerp, Time.deltaTime));
         Flip();
     }
@@ -33,12 +35,18 @@ public class EnemyMovementController : MonoBehaviour
         if (player.position.x < transform.position.x && isRight)
         {
             isRight = false;
-            transform.localRotation = Quaternion.Euler(0, 0, 0);
+            //transform.localRotation = Quaternion.Euler(0, 0, 0);
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x),
+                                               transform.localScale.y,
+                                               transform.localScale.z);
         }
         else if (player.position.x > transform.position.x && !isRight)
         {
             isRight = true;
-            transform.localRotation = Quaternion.Euler(0, 180, 0);
+            //transform.localRotation = Quaternion.Euler(0, 180, 0);
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x),
+                                               transform.localScale.y,
+                                               transform.localScale.z);
         }
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] private float _knockback;
+
     private float speed = 1.0f;
     private float damage = 5.0f;
     private float time = 1.0f;
@@ -31,8 +33,11 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         var damageable = collision.gameObject.GetComponent<Damageable>();
+        var rb = collision.gameObject.GetComponent<Rigidbody2D>();
         if (damageable != null && damageable.CanTakeDamage)
             damageable.TakeDamage(damage);
+        if (rb != null)
+            rb.AddForceAtPosition(transform.right * _knockback, transform.position);
         Destroy(gameObject);
     }
 }

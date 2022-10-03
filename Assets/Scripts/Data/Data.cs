@@ -8,7 +8,7 @@ public static class Data
     public static Weapon SelectedRifle;
     public static Weapon SelectedShotGun;
 
-    public static int CurrentCash = 500;
+    public static int CurrentCash = 5000;
 
     public static StatUpdate HpUpdate;
     public static StatUpdate SpeedUpdate;
