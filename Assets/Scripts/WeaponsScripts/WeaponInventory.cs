@@ -25,10 +25,6 @@ public class WeaponInventory : MonoBehaviour
         bulletsShower = GetComponent<BulletsShower>();
         impulseSource = GetComponent<CinemachineImpulseSource>();
         weapons = new List<Weapon>();
-    }
-
-    private void Start()
-    {
         CreateWeapons();
         SetActiveWeapon(Pistol);
     }

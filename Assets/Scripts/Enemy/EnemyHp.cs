@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class EnemyHp : MonoBehaviour
 {
     public event Action OnDeath;
+    public float MaxHP { get => _maxHp; }
+    public float HP { get => _hp; }
 
     [SerializeField, Min(0.0f)] private float _maxHp = 100;
     [SerializeField, Min(0.0f)] private float _hp = 100;
