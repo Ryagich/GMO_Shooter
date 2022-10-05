@@ -949,13 +949,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4e8863abce40394ea052a8593a21178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CooldownTime: 1
   _leftPoint: {fileID: 1377041929}
   _rightPoint: {fileID: 934774304}
-  _enemies:
-  - {fileID: 1666085693365333535, guid: b296d08904c738647a2c54e3c9504b20, type: 3}
-  - {fileID: 1461355970946356777, guid: 5f47a10d95e00c841924b83995b3a96d, type: 3}
-  - {fileID: 6069700556547221081, guid: c5893822d7453f74ab9e456d42cff954, type: 3}
+  _enemyWaves:
+  - {fileID: 11400000, guid: d6d2701df22a8d342a6cf0330a126d1c, type: 2}
+  - {fileID: 11400000, guid: b82da885d657ade469778b063c8f405e, type: 2}
+  - {fileID: 11400000, guid: 47891550e0001884cbeb1d005e6c31bc, type: 2}
+  - {fileID: 11400000, guid: ce70101fb61164d438245f682e81c959, type: 2}
+  - {fileID: 11400000, guid: a9868590e65edf5469d97b687e5978f7, type: 2}
+  - {fileID: 11400000, guid: 801d53ce8b0548f49818fc37893792e1, type: 2}
+  - {fileID: 11400000, guid: 6862341280913214fa1a7cd13c3f7e33, type: 2}
+  - {fileID: 11400000, guid: 44f7f13294aa0e148883e80b10c1d6eb, type: 2}
 --- !u!114 &610379805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6437,7 +6441,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934774302}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24, y: -2.75, z: 0}
+  m_LocalPosition: {x: 24, y: -1.87, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12297,7 +12301,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7757256, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -12363,7 +12367,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377041927}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24, y: -2.75, z: 0}
+  m_LocalPosition: {x: -24, y: -1.87, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
