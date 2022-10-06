@@ -50,8 +50,9 @@ public class WeaponInventory : MonoBehaviour
         return w;
     }
 
-    private void SetActiveWeapon(Weapon activeWeapon)
+    public void SetActiveWeapon(Weapon activeWeapon)
     {
+        ActiveWeapon = activeWeapon;
         foreach (var w in weapons)
             w.gameObject.SetActive(false);
         activeWeapon.gameObject.SetActive(true);
@@ -71,6 +72,6 @@ public class WeaponInventory : MonoBehaviour
     public void AddBullets(Weapon w, int count)
     {
         w.BulletsController.AddBullets(count);
-        SetBestWeapon();
+        //SetBestWeapon();
     }
 }

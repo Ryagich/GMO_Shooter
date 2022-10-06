@@ -4,18 +4,30 @@ using UnityEngine;
 
 public class CursorFollower : MonoBehaviour
 {
-    [SerializeField] private float offset = 0.0f;
+    [SerializeField] private bool _useMobileInput;
+    [SerializeField] private Joystick _joystick;
+    [SerializeField] private float _offset = 0.0f;
+
+    private float rotation;
 
     private void Update()
-    {
-        var diference = Camera.main.ScreenToWorldPoint(Input.mousePosition)
+    {   
+        if (_useMobileInput && _joystick != null)
+        {
+            if (_joystick.Power > 0.01)
+                rotation = _joystick.Direction;
+        }
+        else
+        {
+            var diference = Camera.main.ScreenToWorldPoint(Input.mousePosition)
                       - transform.position;
-        var rotatetZ = Mathf.Atan2(diference.y, diference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotatetZ + offset);
+            rotation = Mathf.Atan2(diference.y, diference.x) * Mathf.Rad2Deg;
+        }
+        
+        transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotation + _offset);
 
         var localScale = Vector3.one;
-
-        localScale.y = rotatetZ > 90 || rotatetZ < -90 ? -1.0f : 1.0f;
+        localScale.y = rotation > 90 || rotation < -90 ? -1.0f : 1.0f;
         transform.localScale = localScale;
     }
 }

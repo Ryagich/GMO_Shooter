@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MoveController : MonoBehaviour
 {
+    [SerializeField] private bool _useMobileInput;
+    [SerializeField] private HoverButton _left;
+    [SerializeField] private HoverButton _right;
     [SerializeField] private float _speed = 500.0f;
 
     private Vector2 movement = new Vector2();
@@ -23,6 +26,15 @@ public class MoveController : MonoBehaviour
 
     private void Update()
     {
-        movement = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
+        if (_useMobileInput && _left != null && _right != null)
+        {
+            movement = Vector2.zero;
+            movement.x -= _left.IsPressed ? 1 : 0;
+            movement.x += _right.IsPressed ? 1 : 0;
+        }
+        else
+        {
+            movement = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
+        }
     }
 }
