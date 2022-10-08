@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="move_button.svg"
+   inkscape:export-filename="D:\Users\vvbnz\Desktop\КУРСЫ\ПРОЕКТ\NEW GEN\move_button.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="0.75722503"
+     inkscape:cx="415.99259"
+     inkscape:cy="143.28634"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:8.53206;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect846"
+       width="491.46793"
+       height="491.46793"
+       x="10.26603"
+       y="10.26603"
+       rx="32.247162"
+       ry="32.247158" />
+    <path
+       sodipodi:type="star"
+       style="opacity:1;fill:#d7d7d7;fill-opacity:1;stroke:#000000;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path2808"
+       inkscape:flatsided="false"
+       sodipodi:sides="3"
+       sodipodi:cx="-153.66743"
+       sodipodi:cy="255.99998"
+       sodipodi:r1="122.96082"
+       sodipodi:r2="195.1759"
+       sodipodi:arg1="0"
+       sodipodi:arg2="1.0471976"
+       inkscape:rounded="0.14"
+       inkscape:randomized="0"
+       d="m -30.706612,255.99998 c -1e-6,23.92895 -4.649802,157.06283 -25.372879,169.0273 -20.723076,11.96447 -138.345279,-50.57562 -159.068359,-62.5401 -20.72307,-11.96447 -133.69549,-82.55826 -133.69549,-106.4872 0,-23.92895 112.97242,-94.52272 133.69549,-106.48719 20.72308,-11.96448 138.345298,-74.504565 159.068375,-62.540091 20.723076,11.964474 25.372865,145.098341 25.372863,169.027281 z"
+       inkscape:transform-center-x="48.793969"
+       transform="matrix(-1,0,0,1,86.500046,3.9900148e-6)" />
+  </g>
+</svg>
