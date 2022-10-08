@@ -5260,7 +5260,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
   m_FlipX: 0
@@ -5878,7 +5878,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
   m_FlipX: 0
@@ -6831,7 +6831,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &728366716
+--- !u!1 &772021865
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6839,23 +6839,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 728366717}
-  m_Layer: 6
-  m_Name: Hands
+  - component: {fileID: 772021867}
+  - component: {fileID: 772021866}
+  m_Layer: 0
+  m_Name: Lazer Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &728366717
+--- !u!61 &772021866
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772021865}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 22.2, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &772021867
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 728366716}
+  m_GameObject: {fileID: 772021865}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -8.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12917,7 +12944,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
   m_FlipX: 0
@@ -13341,7 +13368,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
   m_FlipX: 0
@@ -13592,6 +13619,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506148018}
   m_CullTransparentMesh: 1
+--- !u!1 &1607780805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1607780806}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1607780806
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607780805}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.8443228, y: -0.20032272, z: -0.07917793}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1627489765
 GameObject:
   m_ObjectHideFlags: 0
@@ -13794,7 +13852,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.5}
+  m_Offset: {x: 0, y: 2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -13805,7 +13863,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12, y: 9}
+  m_Size: {x: 8.2, y: 7.5}
   m_EdgeRadius: 0
 --- !u!1 &1771836123
 GameObject:
@@ -19217,10 +19275,12 @@ GameObject:
   - component: {fileID: 2003746233}
   - component: {fileID: 2003746232}
   - component: {fileID: 2003746235}
-  - component: {fileID: 2003746237}
   - component: {fileID: 2003746238}
   - component: {fileID: 2003746239}
-  - component: {fileID: 2003746240}
+  - component: {fileID: 2003746241}
+  - component: {fileID: 2003746237}
+  - component: {fileID: 2003746242}
+  - component: {fileID: 2003746243}
   m_Layer: 6
   m_Name: Boss
   m_TagString: Enemy
@@ -19282,7 +19342,7 @@ Transform:
   - {fileID: 4105918016078763823}
   - {fileID: 850817766}
   - {fileID: 1757919570}
-  - {fileID: 728366717}
+  - {fileID: 772021867}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19298,8 +19358,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 189fe1defa5eec04797689854832c52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CirclePoint: {x: 0, y: 2.5}
+  IsCircle: 0
   _lerpSpeed: 0.05
-  _range: 3
   _distanceTreshold: 0.3
   _area: {fileID: 850817767}
 --- !u!114 &2003746237
@@ -19314,9 +19375,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07f62bc35b725414a871970c4f03cbfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _handsPoint: {fileID: 728366717}
-  _handPref: {fileID: 6913567859910339596, guid: d12b8a6660d4b7d48ba6e0d420a71ddd, type: 3}
-  DefaultHandsCount: 1
+  _normalHand: {fileID: 6913567859910339596, guid: d12b8a6660d4b7d48ba6e0d420a71ddd, type: 3}
+  _smallHand: {fileID: 6913567859910339596, guid: 7b285e15b7d09eb4a8aacd08418830d7, type: 3}
+  _radius: 4
+  _circleTime: 10
+  _defaultHandsCount: 3
+  _smallHandsSpawnCount: 2
   _area: {fileID: 1757919571}
 --- !u!114 &2003746238
 MonoBehaviour:
@@ -19346,7 +19410,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanTakeDamage: 1
---- !u!114 &2003746240
+--- !u!114 &2003746241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003746231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1b04f2ecfe57b4b9f3ae7b0761ba48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2003746242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003746231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e496fa3f984b1c4a851f44ba645d8d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lazer: {fileID: 3723266052109816117, guid: 4f580ba7684df6e43bcb501053ef52ab, type: 3}
+  _area: {fileID: 772021866}
+--- !u!114 &2003746243
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19358,7 +19448,249 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48eda52b0c033404e85959c6ea8438f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cooldownTime: 10
+  _cooldownTime: 15
+  _states:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2003746237}
+        m_TargetAssemblyTypeName: HandsController, Assembly-CSharp
+        m_MethodName: StartCircleHands
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2003746242}
+        m_TargetAssemblyTypeName: LazerController, Assembly-CSharp
+        m_MethodName: SpawnInRandomPlace
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2003746242}
+        m_TargetAssemblyTypeName: LazerController, Assembly-CSharp
+        m_MethodName: SpawnInRandomPlace
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2003746242}
+        m_TargetAssemblyTypeName: LazerController, Assembly-CSharp
+        m_MethodName: SpawnInRandomPlace
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2003746242}
+        m_TargetAssemblyTypeName: LazerController, Assembly-CSharp
+        m_MethodName: SpawnInRandomPlace
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2003746242}
+        m_TargetAssemblyTypeName: LazerController, Assembly-CSharp
+        m_MethodName: SpawnInRandomPlace
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2003746242}
+        m_TargetAssemblyTypeName: LazerController, Assembly-CSharp
+        m_MethodName: SpawnInRandomPlace
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2003746241}
+        m_TargetAssemblyTypeName: EnemyCharger, Assembly-CSharp
+        m_MethodName: Charge
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2003746242}
+        m_TargetAssemblyTypeName: LazerController, Assembly-CSharp
+        m_MethodName: SpawnInRandomPlace
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2003746242}
+        m_TargetAssemblyTypeName: LazerController, Assembly-CSharp
+        m_MethodName: SpawnInRandomPlace
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2003746241}
+        m_TargetAssemblyTypeName: EnemyCharger, Assembly-CSharp
+        m_MethodName: Charge
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2003746242}
+        m_TargetAssemblyTypeName: LazerController, Assembly-CSharp
+        m_MethodName: SpawnInRandomPlace
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2003746242}
+        m_TargetAssemblyTypeName: LazerController, Assembly-CSharp
+        m_MethodName: SpawnInRandomPlace
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2003746242}
+        m_TargetAssemblyTypeName: LazerController, Assembly-CSharp
+        m_MethodName: SpawnInRandomPlace
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2003746242}
+        m_TargetAssemblyTypeName: LazerController, Assembly-CSharp
+        m_MethodName: SpawnOnHero
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2003746237}
+        m_TargetAssemblyTypeName: HandsController, Assembly-CSharp
+        m_MethodName: InstantiateBigHand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2003746237}
+        m_TargetAssemblyTypeName: HandsController, Assembly-CSharp
+        m_MethodName: InstantiateBigHand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2003746241}
+        m_TargetAssemblyTypeName: EnemyCharger, Assembly-CSharp
+        m_MethodName: Charge
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _tresholds:
+  - 0.95
+  - 0.9
+  - 0.85
+  - 0.8
+  - 0.75
+  - 0.7
+  - 0.65
+  - 0.6
 --- !u!1 &2062008414
 GameObject:
   m_ObjectHideFlags: 0
@@ -24280,7 +24612,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7784091, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

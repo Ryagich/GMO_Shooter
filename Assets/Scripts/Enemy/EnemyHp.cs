@@ -13,6 +13,7 @@ public class EnemyHp : MonoBehaviour
     [SerializeField, Min(0.0f)] private float _maxHp = 100;
     [SerializeField, Min(0.0f)] private float _hp = 100;
     [SerializeField] private Image _hpBar;
+    private bool isDead = false;
 
     private void Start()
     {
@@ -24,8 +25,11 @@ public class EnemyHp : MonoBehaviour
     {
         _hp -= _hp - damage >= 0 ? damage : _hp;
         UpdateHpBar();
-        if (_hp <= 0)
+        if (_hp <= 0 && !isDead)
+        {
             OnDeath?.Invoke();
+            isDead = true;
+        }
     }
 
     private void UpdateHpBar()
