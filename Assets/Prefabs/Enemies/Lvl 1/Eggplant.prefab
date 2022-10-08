@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 85033449663376566}
   - component: {fileID: 2061056011175806410}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1051471815757201571}
   - component: {fileID: 1946954169493773702}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7092005310347482552}
   - component: {fileID: 8619537783192596605}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 6069700555038184754}
   - component: {fileID: 6069700555038184752}
   - component: {fileID: 6069700555038184753}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TouchDamager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -859,7 +859,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5686969490415467863}
   - component: {fileID: 6960084177351242559}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: leg (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

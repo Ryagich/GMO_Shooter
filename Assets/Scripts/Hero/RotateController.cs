@@ -4,14 +4,29 @@ using UnityEngine;
 
 public class RotateController : MonoBehaviour
 {
-    private Vector3 position = new Vector3();
+    [SerializeField] private Transform _transform;
+    [SerializeField] private bool _useMobileInput = true;
+    [SerializeField] private Joystick _joystick;
+
+    private float rotation;
 
     private void Update()
     {
-        position = Camera.main.WorldToScreenPoint(transform.position);
+        if (_useMobileInput && _joystick != null)
+        {
+            if (_joystick.Power > 0.01)
+                rotation = _joystick.Direction;
+        }
+        else
+        {
+            var diference = Camera.main.ScreenToWorldPoint(Input.mousePosition)
+                            - _transform.position;
+            rotation = Mathf.Atan2(diference.y, diference.x) * Mathf.Rad2Deg;
+        }
 
-        transform.localRotation = Input.mousePosition.x < position.x ?
-                               Quaternion.Euler(0, 180, 0)
-                             : Quaternion.Euler(0, 0, 0);
+        var localScale = _transform.localScale;
+        localScale.x = Mathf.Abs(localScale.x) 
+            * (rotation > 90 || rotation < -90 ? 1.0f : -1.0f);
+        _transform.localScale = localScale;
     }
 }

@@ -12,12 +12,17 @@ public class PauseButton : MonoBehaviour
 
     private void Awake()
     {
-        Hero.OnHeroDeied += OpenPauseCanvas;
+        Hero.OnHeroDied += OpenPauseCanvas;
     }
 
     public void OpenPauseCanvas()
     {
         OnPause?.Invoke();
         _pauseCanvas.gameObject.SetActive(true);
+    }
+
+    private void OnDestroy()
+    {
+        Hero.OnHeroDied -= OpenPauseCanvas;
     }
 }

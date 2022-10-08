@@ -26,8 +26,9 @@ public class CursorFollower : MonoBehaviour
         
         transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotation + _offset);
 
-        var localScale = Vector3.one;
-        localScale.y = rotation > 90 || rotation < -90 ? -1.0f : 1.0f;
+        var localScale = transform.localScale;
+        localScale.y = Mathf.Abs(localScale.y)
+            * (rotation > 90 || rotation < -90 ? -1.0f : 1.0f);
         transform.localScale = localScale;
     }
 }
