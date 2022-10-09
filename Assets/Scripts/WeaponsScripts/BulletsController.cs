@@ -22,7 +22,7 @@ public class BulletsController : MonoBehaviour
         if (isInfinite)
             return;
         _currentCount = Math.Min(_currentCount + value, _maxCount);
-        OnBulletCountUpdated.Invoke(CurrentCount);
+        OnBulletCountUpdated?.Invoke(CurrentCount);
     }
 
     public void SubtractBullets(int value)
