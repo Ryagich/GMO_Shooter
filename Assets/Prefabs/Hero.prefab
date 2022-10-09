@@ -10143,7 +10143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd6ba13f7bc5cf4b8cd429fdb1024e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _useMobileInput: 1
+  _useMobileInput: 0
   _left: {fileID: 0}
   _right: {fileID: 0}
   _speed: 5
@@ -10175,7 +10175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _transform: {fileID: 573996603878405890}
-  _useMobileInput: 1
+  _useMobileInput: 0
   _joystick: {fileID: 0}
 --- !u!114 &5001978189906746915
 MonoBehaviour:
