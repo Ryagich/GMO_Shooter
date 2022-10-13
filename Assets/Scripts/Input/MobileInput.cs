@@ -11,7 +11,7 @@ public class MobileInput : MonoBehaviour
     public static event Action<GestureEvent> OnDragEnd;
 
     public const float MinClickTime = 0.001f;
-    public const float MaxClickTime = 0.2f;
+    public const float MaxClickTime = 0.01f;
     public const float MaxClickDistance = 10f;
 
     public bool Enabled = true;

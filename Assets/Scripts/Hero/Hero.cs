@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Hero : MonoBehaviour
 {
-    public static event Action OnHeroDeied;
+    public static event Action OnHeroDied;
     [SerializeField][Min(1.0f)] private float _maxHp = 100.0f;
     [SerializeField][Min(1.0f)] private float _hp = 100.0f;
     [SerializeField] private Image _health;
@@ -39,7 +39,7 @@ public class Hero : MonoBehaviour
 
     private void Death()
     {
-        OnHeroDeied?.Invoke();
+        OnHeroDied?.Invoke();
     }
 
     private void UpdateHpBar()

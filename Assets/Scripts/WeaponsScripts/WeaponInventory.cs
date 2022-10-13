@@ -68,6 +68,6 @@ public class WeaponInventory : MonoBehaviour
     public void AddBullets(Weapon w, int count)
     {
         w.BulletsController.AddBullets(count);
-        //SetBestWeapon();
+        SetBestWeapon();
     }
 }

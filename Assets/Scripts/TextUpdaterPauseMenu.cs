@@ -18,4 +18,9 @@ public class TextUpdaterPauseMenu : MonoBehaviour
         _textTime.text = Stopwatch.Instance.GetTime().ToString() + "s";
         _textKillCount.text = EnemyKillCounter.Instance.Count.ToString();
     }
+
+    private void OnDestroy()
+    {
+        PauseButton.OnPause -= UpdateText;
+    }
 }

@@ -7,7 +7,7 @@ public class MoveController : MonoBehaviour
     [SerializeField] private bool _useMobileInput;
     [SerializeField] private HoverButton _left;
     [SerializeField] private HoverButton _right;
-    [SerializeField] private float _speed = 500.0f;
+    [SerializeField] private float _speed = 5.0f;
 
     private Vector2 movement = new Vector2();
     private Rigidbody2D physic;

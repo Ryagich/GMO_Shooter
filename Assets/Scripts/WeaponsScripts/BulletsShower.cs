@@ -11,13 +11,13 @@ public class BulletsShower : MonoBehaviour
 
     private void Start()
     {
-        WeaponInventory
-            .Rifle
-            .BulletsController
-            .OnBulletCountUpdated += (a => { RifleText.text = a.ToString(); });
-        WeaponInventory
-            .ShotGun
-            .BulletsController
-            .OnBulletCountUpdated += (a => { ShotGunText.text = a.ToString(); });
+        //WeaponInventory
+        //    .Rifle
+        //    .BulletsController
+        //    .OnBulletCountUpdated += (a => { RifleText.text = a.ToString(); });
+        //WeaponInventory
+        //    .ShotGun
+        //    .BulletsController
+        //    .OnBulletCountUpdated += (a => { ShotGunText.text = a.ToString(); });
     }
 }
