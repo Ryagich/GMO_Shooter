@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Materials/RobotBoss.png.meta
 guid: c47de00e6d176c34282c5df8916ec37d
+========
+guid: 540e8672f687a0e498141aec8572dde8
+>>>>>>>> local_main_vbnz:Assets/Materials/Back/fence.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,7 +51,11 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
+<<<<<<<< HEAD:Assets/Materials/RobotBoss.png.meta
   spritePixelsToUnits: 40
+========
+  spritePixelsToUnits: 100
+>>>>>>>> local_main_vbnz:Assets/Materials/Back/fence.png.meta
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -68,6 +76,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
+<<<<<<<< HEAD:Assets/Materials/RobotBoss.png.meta
     textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
@@ -116,6 +125,8 @@ TextureImporter:
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
+========
+>>>>>>>> local_main_vbnz:Assets/Materials/Back/fence.png.meta
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -200,10 +211,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+<<<<<<<< HEAD:Assets/Materials/RobotBoss.png.meta
     nameFileIdTable:
       RobotBoss_2: 1329956811
       RobotBoss_1: -1446581128
       RobotBoss_0: 948031906
+========
+    nameFileIdTable: {}
+>>>>>>>> local_main_vbnz:Assets/Materials/Back/fence.png.meta
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
