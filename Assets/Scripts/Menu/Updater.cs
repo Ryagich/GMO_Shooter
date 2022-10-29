@@ -12,9 +12,11 @@ public class Updater : MonoBehaviour, ISerializationCallbackReceiver
     [SerializeField] private CashManager _cashManager;
 
     protected int index;
+    private Data data;
 
     private void Start()
     {
+        data = PlayerPrefsWrapper.LoadPrefs();
         GetLastOpenIndex();
         UpdateInterface();
     }
@@ -55,7 +57,7 @@ public class Updater : MonoBehaviour, ISerializationCallbackReceiver
 
     private bool CanBuy() =>
             _updates.Length > index + 1 &&
-            _updates[index + 1].Cost <= Data.CurrentCash;
+            _updates[index + 1].Cost <= data.CurrentCash;
 
     private void UpdateIndicators()
     {

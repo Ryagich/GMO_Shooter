@@ -119,10 +119,10 @@ TextureImporter:
       name: beaver_0
       rect:
         serializedVersion: 2
-        x: 181
-        y: 315
-        width: 175
-        height: 188
+        x: 174
+        y: 311
+        width: 186
+        height: 198
       alignment: 9
       pivot: {x: 0.5067029, y: 0.13500765}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,10 +140,10 @@ TextureImporter:
       name: beaver_1
       rect:
         serializedVersion: 2
-        x: 388
-        y: 134
-        width: 117
-        height: 216
+        x: 381
+        y: 132
+        width: 127
+        height: 223
       alignment: 9
       pivot: {x: 0.1842015, y: 0.08457424}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,10 +161,10 @@ TextureImporter:
       name: beaver_2
       rect:
         serializedVersion: 2
-        x: 186
-        y: 8
-        width: 171
-        height: 272
+        x: 180
+        y: 4
+        width: 181
+        height: 281
       alignment: 9
       pivot: {x: 0.4931407, y: 0.060137413}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,10 +182,10 @@ TextureImporter:
       name: beaver_3
       rect:
         serializedVersion: 2
-        x: 368
-        y: 6
-        width: 65
-        height: 121
+        x: 365
+        y: 2
+        width: 73
+        height: 130
       alignment: 9
       pivot: {x: 0.4458637, y: 0.8635227}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,10 +203,10 @@ TextureImporter:
       name: beaver_4
       rect:
         serializedVersion: 2
-        x: 443
-        y: 7
-        width: 64
-        height: 122
+        x: 438
+        y: 3
+        width: 73
+        height: 130
       alignment: 9
       pivot: {x: 0.46334553, y: 0.83169955}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,6 +236,7 @@ TextureImporter:
       beaver_4: 1289949995
       beaver_3: 1404858607
       beaver_0: -761923059
+      beaver_5: -52043560
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

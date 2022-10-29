@@ -13,15 +13,19 @@ public class UpdatesSaver : MonoBehaviour
 
     public void SaveStatUpdates()
     {
-        Data.HpUpdate = _hpUpdater.GetUpdate();
-        Data.SpeedUpdate = _speedUpdater.GetUpdate();
+        var data = PlayerPrefsWrapper.LoadPrefs();
+        data.HpUpdate = _hpUpdater.GetUpdate();
+        data.SpeedUpdate = _speedUpdater.GetUpdate();
+        PlayerPrefsWrapper.SavePrefs(data);
     }
 
     public void SaveBoxUpdates()
     {
-        Data.RifleBoxUpdate = _rifleBoxUpdater.GetUpdate();
-        Data.ShotGunBoxUpdate = _shotGunBoxUpdater.GetUpdate();
-        Data.GoldenBoxUpdate = _goldenBoxUpdater.GetUpdate();
-        Data.HpBoxUpdate = _hpBoxUpdater.GetUpdate();
+        var data = PlayerPrefsWrapper.LoadPrefs();
+        data.RifleBoxUpdate = _rifleBoxUpdater.GetUpdate();
+        data.ShotGunBoxUpdate = _shotGunBoxUpdater.GetUpdate();
+        data.GoldenBoxUpdate = _goldenBoxUpdater.GetUpdate();
+        data.HpBoxUpdate = _hpBoxUpdater.GetUpdate();
+        PlayerPrefsWrapper.SavePrefs(data);
     }
 }

@@ -20,6 +20,6 @@ public class Collectable : MonoBehaviour
 
     public enum Type
     {
-        Heart, Coin, ShotGunBullets, RifleBullets
+        Heart, Coin, ShotGunBullets, RifleBullets, Explosion
     }
 }
