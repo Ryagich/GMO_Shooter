@@ -14,7 +14,7 @@ public class MoveController : MonoBehaviour
 
     private void Awake()
     {
-        _speed *= Data.SpeedUpdate.Update;
+        //_speed *= Data.SpeedUpdate.Update;
         physic = GetComponent<Rigidbody2D>();
     }
 

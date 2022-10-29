@@ -17,12 +17,12 @@ public class CashManager : MonoBehaviour
 
     private void UpdateMoney()
     {
-        _cashText.text = "Cash: " + Data.CurrentCash.ToString();
+        //_cashText.text = "Cash: " + Data.CurrentCash.ToString();
     }
 
     public void SubtractMoney(int value)
     {
-        Data.CurrentCash -= value;
+        //Data.CurrentCash -= value;
         UpdateMoney();
     }
 }

@@ -13,7 +13,7 @@ public class SliceParticle : MonoBehaviour
         var range = 3;
         speed = new Vector2(Random.Range(-range, range), Random.Range(-range, range));
         rotationSpeed = Random.Range(-range, range);
-        Destroy(gameObject, 10);
+        Destroy(gameObject, 5);
     }
 
     private void Update()

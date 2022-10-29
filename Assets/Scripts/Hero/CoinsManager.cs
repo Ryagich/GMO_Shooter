@@ -17,7 +17,7 @@ public class CoinsManager : MonoBehaviour
 
     public void WriteCoins()
     {
-        Data.CurrentCash += coins;
+        //Data.CurrentCash += coins;
     }
 
     private void UpdateCoinsCount()

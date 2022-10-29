@@ -22,5 +22,6 @@ public class EnemySlicer : MonoBehaviour
         }
         _slices.SetParent(null);
         _slices.gameObject.SetActive(true);
+        Destroy(_slices.gameObject, 5);
     }
 }

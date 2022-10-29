@@ -11,9 +11,10 @@ public class UpdatesReader : MonoBehaviour
 
     private void Awake()
     {
-        _hpDropBoxSpawner.SetValues(Data.HpBoxUpdate);
-        _goldenDropBoxSpawner.SetValues(Data.GoldenBoxUpdate);
-        _rifleDropBoxSpawner.SetValues(Data.RifleBoxUpdate);
-        _shotGunDropBoxSpawner.SetValues(Data.ShotGunBoxUpdate);        
+        var data = PlayerPrefsWrapper.LoadPrefs();
+        _hpDropBoxSpawner.SetValues(data.HpBoxUpdate);
+        _goldenDropBoxSpawner.SetValues(data.GoldenBoxUpdate);
+        _rifleDropBoxSpawner.SetValues(data.RifleBoxUpdate);
+        _shotGunDropBoxSpawner.SetValues(data.ShotGunBoxUpdate);        
     }
 }

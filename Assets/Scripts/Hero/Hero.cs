@@ -16,8 +16,8 @@ public class Hero : MonoBehaviour
 
     private void Awake()
     {
-        _maxHp *= Data.HpUpdate.Update;
-        _hp *= Data.HpUpdate.Update;
+        //_maxHp *= Data.HpUpdate.Update;
+        //_hp *= Data.HpUpdate.Update;
 
         coinsManager = GetComponent<CoinsManager>();
         weaponInventory = GetComponent<WeaponInventory>();
