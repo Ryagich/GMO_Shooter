@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using Cinemachine;
+using UnityEditor;
 
 [RequireComponent(typeof(BulletsController))]
+[RequireComponent(typeof(SoundPlayer))]
 public class Weapon : MonoBehaviour
 {
     public BulletsController BulletsController { get; private set; }
@@ -26,11 +28,13 @@ public class Weapon : MonoBehaviour
     protected CinemachineImpulseSource impulseSource;
 
     private LineRenderer line;
+    protected SoundPlayer player;
 
     private void Awake()
     {
         line = GetComponent<LineRenderer>();
         BulletsController = GetComponent<BulletsController>();
+        player = GetComponent<SoundPlayer>();
     }
 
     public void SetImpulseSource(CinemachineImpulseSource impulseSource)
@@ -42,11 +46,11 @@ public class Weapon : MonoBehaviour
     {
         var bullet = Instantiate(_bullet, _shootPoint.position, _shootPoint.rotation);
         bullet.SetStats(_speed, Damage, _time);
-
+        player.Play();
         impulseSource.GenerateImpulse(_shakeAmplitude);
         isReady = false;
         BulletsController.SubtractBullets(1);
-        Camera.main.GetComponent<MonoBehaviour>().StartCoroutine(CoolDown());
+        CoroutineHolder.Instance.StartCoroutine(CoolDown());
     }
 
     protected IEnumerator CoolDown()
@@ -74,7 +78,7 @@ public class Weapon : MonoBehaviour
     {
         var vectorArray = new Vector3[2];
         vectorArray[0] = _shootPoint.position;
-        vectorArray[1] = vectorArray[0] 
+        vectorArray[1] = vectorArray[0]
             + _speed * _time * Time.fixedDeltaTime * transform.right;
         line.SetPositions(vectorArray);
     }

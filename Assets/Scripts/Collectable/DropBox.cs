@@ -7,7 +7,7 @@ public class DropBox : MonoBehaviour
 {
     [SerializeField] private Collectable _dropItem;
     [SerializeField] private float _yTarget = -1.0f;
-    [SerializeField, Min(0)] private float _explosion = 5.0f;
+    [SerializeField, Min(0)] private float _explosionForce = 5.0f;
     [SerializeField, Min(0)] private float _speed = 1.0f;
     [SerializeField] private float _distanceTreshold = 0.01f;
     [SerializeField] private ExplosionParticleController _explosionEffect;
@@ -54,7 +54,7 @@ public class DropBox : MonoBehaviour
             var pref = Instantiate(_dropItem, transform.position,
                                               transform.rotation);
             pref.SetValues(update);
-            var impulse = new Vector2(Random.Range(-_explosion, _explosion), _explosion);
+            var impulse = new Vector2(Random.Range(-_explosionForce, _explosionForce), _explosionForce);
             pref.GetComponent<Rigidbody2D>()
                 .AddForce(impulse, ForceMode2D.Impulse);
         }

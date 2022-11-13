@@ -19,6 +19,12 @@ public class Lazer : MonoBehaviour
 
         StartCoroutine(Animate());
     }
+	
+	private void FixedUpdate() {
+		if (Random.Range(0, 100) > 50) {
+			transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+		}
+	}
 
     private IEnumerator Animate()
     {

@@ -4,6 +4,7 @@ using System.Net.NetworkInformation;
 using UnityEditor;
 using UnityEngine;
 
+[RequireComponent(typeof(SoundPlayer))]
 public class Explosion : MonoBehaviour
 {
     [SerializeField] private float _startScale;
@@ -21,6 +22,8 @@ public class Explosion : MonoBehaviour
         transform.localScale = Vector3.one * _startScale;
         startTime = Time.time;
         damaged = new HashSet<GameObject>();
+        var sp = GetComponent<SoundPlayer>();
+        sp.Play();
     }
 
     private void FixedUpdate()
@@ -35,7 +38,7 @@ public class Explosion : MonoBehaviour
     {
         var go = collision.gameObject;
         var damageable = go.GetComponent<Damageable>();
-        if (damageable == null)
+        if (!damageable)
             return;
 
         if (!damaged.Contains(go))
@@ -43,7 +46,7 @@ public class Explosion : MonoBehaviour
             damaged.Add(go);
             damageable.TakeDamage(_damage);
             var rb = go.GetComponent<Rigidbody2D>();
-            if (rb != null)
+            if (rb)
             {
                 var d = go.transform.position - transform.position;
                 var force = d.normalized * _power;

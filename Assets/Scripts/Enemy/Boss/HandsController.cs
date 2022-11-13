@@ -31,7 +31,6 @@ public class HandsController : MonoBehaviour
         StopCircle();
         if (hands == null || hands.Count == 0)
             return;
-        Debug.Log("!");
         movementController.IsCircle = true;
         var handAngle = (Mathf.PI * 2) / hands.Count;
         for (int i = 0; i < hands.Count; i++)

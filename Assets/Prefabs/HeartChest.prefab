@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021738730112499426}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 0.21, y: 0.21, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -112,7 +112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4072196612072190316}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: -1, z: -5}
+  m_LocalPosition: {x: 3, y: -1, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -179,9 +179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0263a11f905995a40bf0e01b2f3ca952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dropItem: {fileID: -5512046036678362389, guid: 68458d8eb1c7fce47ac6ed69349b4b93, type: 3}
+  _dropItem: {fileID: -7509871281167220142, guid: 7eda6880c5ceb1649a54607e88b52edf, type: 3}
   _yTarget: -1
-  _explosion: 5
+  _explosionForce: 5
   _speed: 1
   _distanceTreshold: 0.01
   _explosionEffect: {fileID: 4628457468360153286, guid: 77d944afdea510841bbdc2d32ab60160, type: 3}

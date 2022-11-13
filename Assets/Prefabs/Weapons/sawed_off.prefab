@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4890113785550945481}
   - component: {fileID: 8499439732599066667}
   - component: {fileID: 1417151102465013857}
+  - component: {fileID: 9051260092952957647}
   m_Layer: 0
   m_Name: sawed_off
   m_TagString: Untagged
@@ -100,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b39e552a6a6c1145a8ef05ad563eb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackCooldown: 0.8
+  AttackCooldown: 0.9
   Damage: 100
   _shootPoint: {fileID: 7694912363187920976}
   _bullet: {fileID: 6152613892789413122, guid: d2033d714213a3e478c47b4678860bbc, type: 3}
@@ -227,6 +228,21 @@ MonoBehaviour:
   _currentCount: 0
   _maxCount: 30
   isInfinite: 0
+--- !u!114 &9051260092952957647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6685094523443902285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb31d410e0ca0c143892302e0b55c74a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audio: {fileID: 8300000, guid: b90a1cc28063bea48868bc83d208866b, type: 3}
+  _pitchRange: {x: 0.7, y: 1}
+  _volumeRange: {x: 0.8, y: 1}
 --- !u!1 &7694912363187920977
 GameObject:
   m_ObjectHideFlags: 0

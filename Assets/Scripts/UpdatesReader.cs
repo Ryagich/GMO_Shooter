@@ -8,6 +8,7 @@ public class UpdatesReader : MonoBehaviour
     [SerializeField] private BoxSpawner _goldenDropBoxSpawner;
     [SerializeField] private BoxSpawner _rifleDropBoxSpawner;
     [SerializeField] private BoxSpawner _shotGunDropBoxSpawner;
+    [SerializeField] private BoxSpawner _tntDropBoxSpawner;
 
     private void Awake()
     {
@@ -15,6 +16,7 @@ public class UpdatesReader : MonoBehaviour
         _hpDropBoxSpawner.SetValues(data.HpBoxUpdate);
         _goldenDropBoxSpawner.SetValues(data.GoldenBoxUpdate);
         _rifleDropBoxSpawner.SetValues(data.RifleBoxUpdate);
-        _shotGunDropBoxSpawner.SetValues(data.ShotGunBoxUpdate);        
+        _shotGunDropBoxSpawner.SetValues(data.ShotGunBoxUpdate);
+        _tntDropBoxSpawner.SetValues(data.TntBoxUpdate);
     }
 }

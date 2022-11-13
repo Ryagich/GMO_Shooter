@@ -7,6 +7,7 @@ public class EnemyMovementController : MonoBehaviour
     [SerializeField] private float _speed = 1.0f;
     [SerializeField] private float _acceleration = 1.0f;
     [SerializeField] private float _rotationLerp = 1.0f;
+    [SerializeField] private bool _mirrorX = false;
 
     private Transform player;
     private bool isRight;
@@ -32,11 +33,12 @@ public class EnemyMovementController : MonoBehaviour
 
     private void Flip()
     {
+        var sx = _mirrorX ? -1 : 1;
         if (player.position.x < transform.position.x && isRight)
         {
             isRight = false;
             //transform.localRotation = Quaternion.Euler(0, 0, 0);
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x),
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x)* sx,
                                                transform.localScale.y,
                                                transform.localScale.z);
         }
@@ -44,7 +46,7 @@ public class EnemyMovementController : MonoBehaviour
         {
             isRight = true;
             //transform.localRotation = Quaternion.Euler(0, 180, 0);
-            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x),
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x) * sx,
                                                transform.localScale.y,
                                                transform.localScale.z);
         }

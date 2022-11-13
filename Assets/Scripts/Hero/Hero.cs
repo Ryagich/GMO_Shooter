@@ -18,7 +18,6 @@ public class Hero : MonoBehaviour
     {
         //_maxHp *= Data.HpUpdate.Update;
         //_hp *= Data.HpUpdate.Update;
-
         coinsManager = GetComponent<CoinsManager>();
         weaponInventory = GetComponent<WeaponInventory>();
     }
@@ -53,7 +52,7 @@ public class Hero : MonoBehaviour
         if (collisionObj.layer != LayerMask.NameToLayer("Collectable"))
             return;
         var collectable = collisionObj.GetComponent<Collectable>();
-        if (collectable == null)
+        if (!collectable)
             return;
         switch (collectable.CollectableType)
         {
@@ -70,6 +69,6 @@ public class Hero : MonoBehaviour
                 weaponInventory.AddBullets(weaponInventory.Rifle, collectable.Value);
                 break;
         }
-        Destroy(collectable.gameObject);
+        collectable.Collect();        
     }
 }

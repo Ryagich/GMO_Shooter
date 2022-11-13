@@ -4861,6 +4861,7 @@ GameObject:
   - component: {fileID: 3316841049092076473}
   - component: {fileID: 245200539892635848}
   - component: {fileID: 7850862622353300740}
+  - component: {fileID: 229934516158342396}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -4968,3 +4969,18 @@ CircleCollider2D:
   m_Offset: {x: -0.12, y: 0}
   serializedVersion: 2
   m_Radius: 1.74
+--- !u!114 &229934516158342396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6579451859717772345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb31d410e0ca0c143892302e0b55c74a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audio: {fileID: 8300000, guid: 4a127e4688df05b41b63b1d011de46dd, type: 3}
+  _pitchRange: {x: 0.8, y: 1}
+  _volumeRange: {x: 0.8, y: 1}

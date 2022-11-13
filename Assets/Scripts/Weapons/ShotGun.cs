@@ -19,7 +19,7 @@ public class ShotGun : Weapon
             bullet.SetStats(_speed, Damage / bulletCount, _time);
         }
         impulseSource.GenerateImpulse(_shakeAmplitude);
-
+        base.player.Play();
         isReady = false;
         BulletsController.SubtractBullets(1);
         Camera.main.GetComponent<MonoBehaviour>().StartCoroutine(CoolDown());//костыль

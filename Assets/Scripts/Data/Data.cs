@@ -74,6 +74,12 @@ public class Data
         set => _hpBoxUpdate = ScriptableLoader.FindBoxUpdate(value);
     }
 
+    public BoxUpdate TntBoxUpdate
+    {
+        get => ScriptableLoader.GetBoxUpdate(_tntBoxUpdate);
+        set => _tntBoxUpdate = ScriptableLoader.FindBoxUpdate(value);
+    }
+
     [SerializeField] private int _selectedPistol;
     [SerializeField] private int _selectedRifle;
     [SerializeField] private int _selectedShotGun;
@@ -85,4 +91,5 @@ public class Data
     [SerializeField] private int _shotGunBoxUpdate;
     [SerializeField] private int _goldenBoxUpdate;
     [SerializeField] private int _hpBoxUpdate;
+    [SerializeField] private int _tntBoxUpdate;
 }

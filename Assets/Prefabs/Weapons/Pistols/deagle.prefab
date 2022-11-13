@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 7728163088912588165}
   - component: {fileID: 779725385360650806}
   - component: {fileID: 3071271464383297613}
+  - component: {fileID: 3181494629971461212}
   m_Layer: 0
   m_Name: deagle
   m_TagString: Untagged
@@ -138,7 +139,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 2112
-  _speed: 200
+  _speed: 400
   _time: 1
   _shakeAmplitude: 0.1
 --- !u!120 &779725385360650806
@@ -255,3 +256,18 @@ MonoBehaviour:
   _currentCount: 0
   _maxCount: 0
   isInfinite: 1
+--- !u!114 &3181494629971461212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7120470213739952022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb31d410e0ca0c143892302e0b55c74a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audio: {fileID: 8300000, guid: c850029348d07f94f84ceac848479b01, type: 3}
+  _pitchRange: {x: 0.8, y: 1.1}
+  _volumeRange: {x: 0.8, y: 1}

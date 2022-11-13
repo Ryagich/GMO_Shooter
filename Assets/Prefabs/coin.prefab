@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5254610765409506497}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.081, y: 0.018, z: 0}
+  m_LocalPosition: {x: -0.081, y: 0.018, z: -0.154}
   m_LocalScale: {x: 0.21, y: 0.21, z: 0.21}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: -7567555659601974764}
   - component: {fileID: -7320228254816607817}
   - component: {fileID: 6210153349334940018}
+  - component: {fileID: -7972443303468776150}
   m_Layer: 8
   m_Name: coin
   m_TagString: Coin
@@ -184,7 +185,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -1065,7 +1066,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 70
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4950,7 +4951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f1168f7c1e755418e90ca4300109a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _treshold: 0.01
+  _treshold: 0.001
 --- !u!114 &6210153349334940018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4964,3 +4965,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollectableType: 1
+--- !u!114 &-7972443303468776150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8344510664182236589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb31d410e0ca0c143892302e0b55c74a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audio: {fileID: 8300000, guid: 115db2eabf3573a4a82b3d5842a02f60, type: 3}
+  _pitchRange: {x: 0.8, y: 1.2}
+  _volumeRange: {x: 0.8, y: 1}

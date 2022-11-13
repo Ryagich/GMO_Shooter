@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 7256442235204268376}
   - component: {fileID: -5371478363808875547}
   - component: {fileID: 8450033224239048125}
+  - component: {fileID: 1623916576753750191}
   m_Layer: 0
   m_Name: nova_
   m_TagString: Untagged
@@ -131,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b39e552a6a6c1145a8ef05ad563eb0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackCooldown: 0.8
+  AttackCooldown: 0.7
   Damage: 50
   _shootPoint: {fileID: 2651155375387037630}
   _bullet: {fileID: 6152613892789413122, guid: d2033d714213a3e478c47b4678860bbc, type: 3}
@@ -258,3 +259,18 @@ MonoBehaviour:
   _currentCount: 0
   _maxCount: 30
   isInfinite: 0
+--- !u!114 &1623916576753750191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8012004432759708748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb31d410e0ca0c143892302e0b55c74a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audio: {fileID: 8300000, guid: b90a1cc28063bea48868bc83d208866b, type: 3}
+  _pitchRange: {x: 0.7, y: 1}
+  _volumeRange: {x: 0.8, y: 1}

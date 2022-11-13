@@ -11,12 +11,27 @@ public class Collectable : MonoBehaviour
 
     public Type CollectableType;
 
+    private SoundPlayer player;
+
+    private void Start()
+    {
+        player = GetComponent<SoundPlayer>();
+    }
+
     public void SetValues(BoxUpdate update)
     {
         lifetime = update.ItemLifetime;
         itemValue = update.ItemValue;
         Destroy(gameObject, lifetime);
     }
+
+    public void Collect()
+    {
+        if (player)
+            player.Play();
+        Destroy(gameObject);
+    }
+
 
     public enum Type
     {

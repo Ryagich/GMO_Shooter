@@ -12,7 +12,7 @@ public class SliceParticle : MonoBehaviour
         GetComponent<SpriteRenderer>().sortingOrder = 1000;
         var range = 3;
         speed = new Vector2(Random.Range(-range, range), Random.Range(-range, range));
-        rotationSpeed = Random.Range(-range, range);
+        rotationSpeed = Random.Range(-range * 2, range * 2);
         Destroy(gameObject, 5);
     }
 
