@@ -1,0 +1,35 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/UI/StyleSheets/WeaponShop.uss?fileID=7433441132597879392&amp;guid=260801f0c0189714e89340d8bd02f90f&amp;type=3#WeaponShop" />
+    <Style src="project://database/Assets/Resources/UI/StyleSheets/RoundButtons.uss?fileID=7433441132597879392&amp;guid=8e924ece37e00ba4a8034b98fdfbda6d&amp;type=3#RoundButtons" />
+    <Style src="project://database/Assets/Resources/UI/StyleSheets/Tabs.uss?fileID=7433441132597879392&amp;guid=9055b207f7f2a614983a467443350a19&amp;type=3#Tabs" />
+    <ui:VisualElement name="weapon_type" style="width: 600px;">
+        <ui:VisualElement name="knobs" class="weapon_indicators" style="justify-content: center; align-items: center; top: 80px;" />
+        <ui:VisualElement name="weapon_info" class="tab_content">
+            <ui:VisualElement name="inner_info" class="round_element default_panel" style="left: 0; top: 0; right: 0; bottom: 0; position: absolute;">
+                <ui:VisualElement name="info" style="position: absolute; left: 0; top: 0; right: 0; bottom: 50%;">
+                    <ui:VisualElement name="pic" style="position: absolute; left: 0; top: 0; right: 50%; bottom: 0; background-image: url(&apos;project://database/Assets/Materials/Cartoon/Weapons/uzi.png?fileID=2800000&amp;guid=e2209eec82a34a048887f46bf4eccf97&amp;type=3#uzi&apos;); -unity-background-scale-mode: scale-to-fit; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" />
+                    <ui:VisualElement name="text" style="position: absolute; left: 50%; top: 0; right: 0; bottom: 0; justify-content: center;">
+                        <ui:Label tabindex="-1" text="Uzi&#10;Damage-10&#10;Speed-10" display-tooltip-when-elided="true" name="weapon_text" style="-unity-font-definition: none; -unity-font: url(&apos;project://database/Assets/UI/Fonts/dirtyoldtown.ttf?fileID=12800000&amp;guid=f70fb8d509907ca428a8820586e97b7b&amp;type=3#dirtyoldtown&apos;); color: rgb(38, 35, 34); font-size: 33%; margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 20px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="buy" style="position: absolute; left: 0; top: 50%; right: 0; bottom: 0; justify-content: center; flex-direction: row; align-items: center;">
+                    <ui:VisualElement name="buy_button" class="round_element default_panel" style="background-color: rgb(113, 197, 7); justify-content: center; align-items: center;">
+                        <ui:Label tabindex="-1" text="Buy" display-tooltip-when-elided="true" name="weapon_text" style="-unity-font-definition: none; -unity-font: url(&apos;project://database/Assets/UI/Fonts/dirtyoldtown.ttf?fileID=12800000&amp;guid=f70fb8d509907ca428a8820586e97b7b&amp;type=3#dirtyoldtown&apos;); color: rgb(38, 35, 34); margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 20px; font-size: 50px; -unity-text-align: middle-center; scale: 1 1;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="price" style="justify-content: flex-end; flex-direction: row; align-items: center;">
+                        <ui:VisualElement name="coin" class="coin_icon" />
+                        <ui:Label tabindex="-1" text="300" display-tooltip-when-elided="true" name="weapon_price" style="-unity-font-definition: none; -unity-font: url(&apos;project://database/Assets/UI/Fonts/dirtyoldtown.ttf?fileID=12800000&amp;guid=f70fb8d509907ca428a8820586e97b7b&amp;type=3#dirtyoldtown&apos;); color: rgb(38, 35, 34); margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 20px; font-size: 50px; -unity-text-align: middle-center;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="controls" class="weapon_controls" style="align-items: center; justify-content: center;">
+            <ui:VisualElement name="prev" class="round_button round_element default_panel">
+                <ui:VisualElement name="icon" class="icon" style="background-image: url(&apos;project://database/Assets/Materials/UI/Game/arrow_no_bg.png?fileID=2800000&amp;guid=b5f35cefb63d6a7429a7ac9590a01617&amp;type=3#arrow_no_bg&apos;); -unity-background-image-tint-color: rgb(0, 0, 0); scale: -1 1;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="next" class="round_button round_element default_panel">
+                <ui:VisualElement name="icon" class="icon" style="background-image: url(&apos;project://database/Assets/Materials/UI/Game/arrow_no_bg.png?fileID=2800000&amp;guid=b5f35cefb63d6a7429a7ac9590a01617&amp;type=3#arrow_no_bg&apos;); -unity-background-image-tint-color: rgb(0, 0, 0);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

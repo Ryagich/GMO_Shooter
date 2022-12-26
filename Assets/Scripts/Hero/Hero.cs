@@ -15,24 +15,22 @@ public class Hero : MonoBehaviour
     private WeaponInventory weaponInventory;
 
     private void Awake()
-    {
-        //_maxHp *= Data.HpUpdate.Update;
-        //_hp *= Data.HpUpdate.Update;
+    {   
         coinsManager = GetComponent<CoinsManager>();
         weaponInventory = GetComponent<WeaponInventory>();
     }
 
     public void TakeDamage(float damage)
     {
-        _hp -= _hp - damage >= 0 ? damage : _hp;
+        _hp = Math.Max(0, _hp - damage);
         if (_hp == 0)
             Death();
         UpdateHpBar();
     }
 
-    public void TakeHp(float hp)
+    public void AddHp(float hp)
     {
-        _hp = _hp + hp >= _maxHp ? _maxHp : _hp + hp;
+        _hp = Math.Min(hp + _hp, _maxHp);
         UpdateHpBar();
     }
 
@@ -43,7 +41,7 @@ public class Hero : MonoBehaviour
 
     private void UpdateHpBar()
     {
-        _health.fillAmount = _hp / _maxHp;
+        //_health.fillAmount = _hp / _maxHp;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -57,7 +55,7 @@ public class Hero : MonoBehaviour
         switch (collectable.CollectableType)
         {
             case Collectable.Type.Heart:
-                // TODO: ADD HP
+                AddHp(collectable.Value);
                 break;
             case Collectable.Type.Coin:
                 coinsManager.AddCoins(collectable.Value);

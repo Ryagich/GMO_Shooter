@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/UI/StyleSheets/RoundButtons.uss?fileID=7433441132597879392&amp;guid=8e924ece37e00ba4a8034b98fdfbda6d&amp;type=3#RoundButtons" />
+    <Style src="project://database/Assets/Resources/UI/StyleSheets/Tabs.uss?fileID=7433441132597879392&amp;guid=9055b207f7f2a614983a467443350a19&amp;type=3#Tabs" />
+    <Style src="project://database/Assets/Resources/UI/StyleSheets/WeaponShop.uss?fileID=7433441132597879392&amp;guid=260801f0c0189714e89340d8bd02f90f&amp;type=3#WeaponShop" />
+    <ui:VisualElement name="base" class="weapon_shop_type_base">
+        <WeaponTypeShop name="pistol" />
+        <WeaponTypeShop name="rifle" />
+        <WeaponTypeShop name="shotgun" />
+    </ui:VisualElement>
+</ui:UXML>

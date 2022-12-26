@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Pepper
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 1461355970946356777, guid: a322b74a4cdce254eb6123aeb6fdf01b, type: 3}
-  _enemyCount: 10
+  _enemyCount: 2
   _duration: 20

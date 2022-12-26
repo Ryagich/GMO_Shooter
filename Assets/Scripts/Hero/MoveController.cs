@@ -9,32 +9,31 @@ public class MoveController : MonoBehaviour
     [SerializeField] private HoverButton _right;
     [SerializeField] private float _speed = 5.0f;
 
-    private Vector2 movement = new Vector2();
+    private Vector2 movementDirection;
     private Rigidbody2D physic;
 
     private void Awake()
     {
-        //_speed *= Data.SpeedUpdate.Update;
         physic = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
     {
-        //rigidbody2D.AddForce(movement * Speed * Time.deltaTime);
-        physic.velocity = movement * _speed;
+        var velocity = movementDirection.normalized * _speed;
+        physic.velocity = Vector2.Lerp(physic.velocity, velocity, 0.5f);
     }
 
     private void Update()
     {
         if (_useMobileInput && _left != null && _right != null)
         {
-            movement = Vector2.zero;
-            movement.x -= _left.IsPressed ? 1 : 0;
-            movement.x += _right.IsPressed ? 1 : 0;
+            movementDirection = Vector2.zero;
+            movementDirection.x -= _left.IsPressed ? 1 : 0;
+            movementDirection.x += _right.IsPressed ? 1 : 0;
         }
         else
         {
-            movement = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
+            movementDirection = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
         }
     }
 }

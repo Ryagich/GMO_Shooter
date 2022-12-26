@@ -6,7 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private Transform _leftPoint,
                                        _rightPoint;
-    [SerializeField] private List<EnemyWave> _enemyWaves;
+    [SerializeField] private List<WaveScriptable> _enemyWaves;
 
     private int waveIndex = 0;
 
@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
     {
         var enemy = Instantiate(prefab, transform);
         enemy.transform.position = (Random.value > 0.5 ? _leftPoint : _rightPoint).position;
-        enemy.transform.localScale *= Random.Range(0.8f, 1f);
+        enemy.transform.localScale *= Random.Range(1.2f, 1.5f);
     }
 
     public void NextWave()

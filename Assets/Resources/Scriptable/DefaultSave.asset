@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e99ce80a0db02348baf7b2cbbcc815e, type: 3}
+  m_Name: DefaultSave
+  m_EditorClassIdentifier: 
+  Money: 8740
+  MaxLevel: {fileID: 11400000, guid: ae3a64ab138a48043853b35fdf541ca1, type: 2}
+  MaxWave: {fileID: 11400000, guid: 44f7f13294aa0e148883e80b10c1d6eb, type: 2}
+  AvailableWeapons:
+  - {fileID: 11400000, guid: 8da9d5f895a57c543996036953b6d34b, type: 2}
+  - {fileID: 11400000, guid: bb435be8addda6f4b84365f456f9a1d2, type: 2}
+  - {fileID: 11400000, guid: 1e8e75f9f99269943899dfeec756e02f, type: 2}
+  - {fileID: 11400000, guid: be6f2331eb7745443bfee86c8d10dc32, type: 2}
+  - {fileID: 11400000, guid: 1a8bb1d2c55156944898823cf923dbd3, type: 2}
+  - {fileID: 11400000, guid: 9b1f1085a077e0c4eb55b0c984153f21, type: 2}
+  - {fileID: 11400000, guid: ede18fb8d9245ce4db744ec00779df5b, type: 2}
+  - {fileID: 11400000, guid: 0acd2cf249234b6419291f9cc1c91102, type: 2}
+  - {fileID: 11400000, guid: 1c76bbc038808c84babdeb569c6ea0ab, type: 2}
+  - {fileID: 11400000, guid: 3bc36f22b6cf9b449bae806d4c7c8130, type: 2}
+  SelectedPistol: {fileID: 11400000, guid: 1c76bbc038808c84babdeb569c6ea0ab, type: 2}
+  SelectedRifle: {fileID: 11400000, guid: 1a8bb1d2c55156944898823cf923dbd3, type: 2}
+  SelectedShotgun: {fileID: 11400000, guid: 1e8e75f9f99269943899dfeec756e02f, type: 2}
+  AvailableStatUpdates: []
+  AvailableBoxUpdates:
+  - {fileID: 11400000, guid: 8ea67f8f76c0c67418e285ba4745a2b8, type: 2}
+  - {fileID: 11400000, guid: 9bc3ac8281defd943ad33b620d47007c, type: 2}
+  - {fileID: 11400000, guid: 868d0d598df0d7b4f92be6602b7b1482, type: 2}
+  - {fileID: 11400000, guid: 460e30443e3d3e341b8246de7b9c6f09, type: 2}
+  - {fileID: 11400000, guid: 869bb1225ef3e0644b57e02385f8c527, type: 2}

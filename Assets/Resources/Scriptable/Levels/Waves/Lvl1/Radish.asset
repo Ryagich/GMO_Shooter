@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Radish
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 1461355970946356777, guid: 9a2b786bcbc546346956842f5f9fc553, type: 3}
-  _enemyCount: 10
+  _enemyCount: 2
   _duration: 20

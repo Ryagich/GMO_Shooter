@@ -14,9 +14,7 @@ public class WeaponsManager : MonoBehaviour
     [SerializeField] private CashManager _cashManager;
     [SerializeField] private Image _speedBar;
     [SerializeField] private Image _damageBar;
-    [SerializeField] private MaximumTakerFromWeapons _maximumTaker;
 
-    private Data data;
     private float maxWeaponAttackSpeed;
     private float maxWeaponDamage;
     private int lastOpenIndex;
@@ -24,11 +22,11 @@ public class WeaponsManager : MonoBehaviour
 
     private void Awake()
     {
-        maxWeaponAttackSpeed = _maximumTaker.GetMaxSpeed();
-        maxWeaponDamage = _maximumTaker.GetMaxDamage();
+        //maxWeaponAttackSpeed = _maximumTaker.GetMaxSpeed();
+        //maxWeaponDamage = _maximumTaker.GetMaxDamage();
         lastOpenIndex = GetLastOpen();
         selectedIndex = lastOpenIndex;
-        data = PlayerPrefsWrapper.LoadPrefs();
+
 
         UpdateInterface();
     }
@@ -70,8 +68,8 @@ public class WeaponsManager : MonoBehaviour
 
     private void UpdateBars()
     {
-        _speedBar.fillAmount = WeaponTypes[selectedIndex].Weapon.AttackCooldown / maxWeaponAttackSpeed;
-        _damageBar.fillAmount = WeaponTypes[selectedIndex].Weapon.Damage / maxWeaponDamage;
+        //_speedBar.fillAmount = WeaponTypes[selectedIndex].Weapon.AttackCooldown / maxWeaponAttackSpeed;
+        //_damageBar.fillAmount = WeaponTypes[selectedIndex].Weapon.Damage / maxWeaponDamage;
     }
 
     private int GetLastOpen()
@@ -84,19 +82,19 @@ public class WeaponsManager : MonoBehaviour
 
     private void UpdateSignalImage()
     {
-        for (int i = lastOpenIndex; i < WeaponTypes.Length; i++)
-            if (WeaponTypes[i].Cost <= data.CurrentCash && !WeaponTypes[i].IsOpen)
-            {
-                _signalImage.gameObject.SetActive(true);
-                return;
-            }
-        _signalImage.gameObject.SetActive(false);
+        //for (int i = lastOpenIndex; i < WeaponTypes.Length; i++)
+        //    if (WeaponTypes[i].Cost <= data.CurrentCash && !WeaponTypes[i].IsOpen)
+        //    {
+        //        _signalImage.gameObject.SetActive(true);
+        //        return;
+        //    }
+        //_signalImage.gameObject.SetActive(false);
     }
 
     private void UpdateBuyButton()
     {
-        _buyButton.gameObject.SetActive(selectedIndex - 1 == lastOpenIndex
-                                     && WeaponTypes[selectedIndex].Cost <= data.CurrentCash);
+        //_buyButton.gameObject.SetActive(selectedIndex - 1 == lastOpenIndex
+        //                             && WeaponTypes[selectedIndex].Cost <= data.CurrentCash);
     }
 
     private void UpdateIndicators()

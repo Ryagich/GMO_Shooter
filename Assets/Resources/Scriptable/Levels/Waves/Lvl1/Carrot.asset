@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Carrot
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 1666085693365333535, guid: b296d08904c738647a2c54e3c9504b20, type: 3}
-  _enemyCount: 10
+  _enemyCount: 2
   _duration: 20

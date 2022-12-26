@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Eggplant
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 6069700556547221081, guid: c5893822d7453f74ab9e456d42cff954, type: 3}
-  _enemyCount: 10
+  _enemyCount: 2
   _duration: 20

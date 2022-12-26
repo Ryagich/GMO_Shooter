@@ -1,0 +1,58 @@
+.weapon_indicators {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    flex-direction: row;
+    flex-shrink: 0;
+}
+
+.weapon_controls {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: row;
+    flex-shrink: 0;
+}
+
+.weapon_knob {
+    width: 40px;
+    height: 40px;
+    background-color: var(--c1b);
+    margin-right: 10px;
+    margin-left: 10px;
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 100%;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+}
+
+.weapon_knob_selected {
+    width: 60px;
+    height: 60px;
+    border-left-width: var(--brdw);
+    border-right-width: var(--brdw);
+    border-top-width: var(--brdw);
+    border-bottom-width: var(--brdw);
+    border-left-color: var(--c1d);
+    border-right-color: var(--c1d);
+    border-top-color: var(--c1d);
+    border-bottom-color: var(--c1d);
+}
+
+.weapon_shop_type_base {
+    height: 100%;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.coin_icon {
+    background-image: url('project://database/Assets/Materials/Cartoon/Collectables/coin.png?fileID=2800000&guid=ca8c81192b2617b40bedba584cc6f151&type=3#coin');
+    -unity-background-scale-mode: scale-to-fit;
+    margin-right: 20px;
+    width: 60px;
+    height: 60px;
+    scale: 2 2;
+    translate: 0px -7px;
+}

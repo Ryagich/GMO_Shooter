@@ -23,13 +23,12 @@ public class HoverButton : MonoBehaviour
     {
         if (!BoundsUtils.IsInsideTransform(activeRect, args.Position))
             return;
-        dragSum += 0.4f;
-        dragSum = Mathf.Min(dragSum, 1);
+        dragSum = 1;        
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        dragSum = Mathf.MoveTowards(dragSum, -1, 0.2f);
+        dragSum = Mathf.MoveTowards(dragSum, -1, 0.5f);
         image.color = IsPressed ? Color.gray : Color.white;
     }
 

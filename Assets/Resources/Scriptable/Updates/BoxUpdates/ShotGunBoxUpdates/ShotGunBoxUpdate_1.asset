@@ -18,5 +18,6 @@ MonoBehaviour:
   ItemCount: 4
   ItemValue: 4
   NextUpdate: {fileID: 11400000, guid: f3d285274aa62b040b31018517f88de3, type: 2}
+  Type: 3
   _cost: 10
   _isOpen: 0

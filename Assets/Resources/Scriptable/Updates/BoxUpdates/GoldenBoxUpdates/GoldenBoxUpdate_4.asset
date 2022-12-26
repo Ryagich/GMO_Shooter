@@ -17,5 +17,7 @@ MonoBehaviour:
   ItemLifetime: 5
   ItemCount: 6
   ItemValue: 6
+  NextUpdate: {fileID: 0}
+  Type: 1
   _cost: 40
   _isOpen: 0

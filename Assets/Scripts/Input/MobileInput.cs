@@ -10,8 +10,8 @@ public class MobileInput : MonoBehaviour
     public static event Action<GestureEvent> OnDrag;
     public static event Action<GestureEvent> OnDragEnd;
 
-    public const float MinClickTime = 0.001f;
-    public const float MaxClickTime = 0.01f;
+    public const float MinClickTime = 0.0005f;
+    public const float MaxClickTime = 0.001f;
     public const float MaxClickDistance = 10f;
 
     public bool Enabled = true;
@@ -23,7 +23,7 @@ public class MobileInput : MonoBehaviour
         gestures = new Dictionary<int, Gesture>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (!Enabled)
             return;

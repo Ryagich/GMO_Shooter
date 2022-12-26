@@ -1,0 +1,91 @@
+.tab {
+    background-color: var(--c1b);
+    border-left-color: var(--c1d);
+    border-right-color: var(--c1d);
+    border-top-color: var(--c1d);
+    border-bottom-color: var(--c1d);
+    background-image: var(--ib);
+}
+
+.tab_selected {
+    border-left-width: var(--brdw);
+    border-right-width: var(--brdw);
+    border-top-width: var(--brdw);
+    border-bottom-width: var(--brdw);
+}
+
+.background {
+    background-image: var(--id);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.tab_controls {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-top-width: var(--brdw);
+    border-left-color: var(--c1d);
+    border-right-color: var(--c1d);
+    border-top-color: var(--c1d);
+    border-bottom-color: var(--c1d);
+    flex-direction: row;
+    flex-shrink: 0;
+}
+
+.tab_info {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    flex-direction: row;
+    flex-shrink: 0;
+}
+
+.tab_content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: var(--elem_size);
+    bottom: var(--elem_size);
+    padding-left: var(--marg);
+    margin-left: var(--marg);
+    padding-right: var(--marg);
+    margin-right: var(--marg);
+    padding-top: var(--marg);
+    margin-top: var(--marg);
+    padding-bottom: var(--marg);
+    margin-bottom: var(--marg);
+}
+
+.tab_base {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column-reverse;
+}
+
+.label_big {
+    -unity-font: url('project://database/Assets/UI/Fonts/dirtyoldtown.ttf?fileID=12800000&guid=f70fb8d509907ca428a8820586e97b7b&type=3#dirtyoldtown');
+    font-size: 60px;
+    color: rgb(38, 35, 34);
+    letter-spacing: 5px;
+    -unity-font-definition: none;
+}
+
+.label_big_holder {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow: hidden;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}

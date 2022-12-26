@@ -22,8 +22,6 @@ public class Enemy : MonoBehaviour
 
     private void Death()
     {
-        if (EnemyKillCounter.Instance != null)
-            EnemyKillCounter.Instance.Count++;
         Destroy(gameObject);
     }
 }

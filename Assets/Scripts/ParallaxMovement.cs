@@ -15,7 +15,7 @@ public class ParallaxMovement : MonoBehaviour
         oldX = _follow.position.x;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         var d = oldX - _follow.position.x;
         for (int i = 0; i < _layers.Count; i++)

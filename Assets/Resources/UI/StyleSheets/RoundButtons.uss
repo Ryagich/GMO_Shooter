@@ -1,0 +1,60 @@
+:root {
+    --c1d: #262322;
+    --c1b: #F9A620;
+    --c2d: #63372C;
+    --c2b: #0e7b81;
+    --c3l: #D0CCD0;
+
+    --id: url('project://database/assets/materials/ui/shop/innershadow.png?fileid=2800000&guid=bd873445398fb6e4880e52102d46412a&type=3#innershadow');
+    --ib: url('project://database/Assets/Materials/UI/Shop/innerglow.png?fileID=2800000&guid=d0bce7dc8d90a40409d742071ebdcf82&type=3#innerglow');
+
+    --brdw:         10px;
+    --brdr:         30px;
+    --brdrx2:       60px;
+    --marg:         20px;
+    --elem_size:    150px;
+}
+
+.default_panel {
+    border-left-width:      var(--brdw);
+    border-right-width:     var(--brdw);
+    border-top-width:       var(--brdw);
+    border-bottom-width:    var(--brdw);
+    background-color:       var(--c1b);
+    border-left-color:      var(--c1d);
+    border-right-color:     var(--c1d);
+    border-top-color:       var(--c1d);
+    border-bottom-color:    var(--c1d);
+    background-image:       var(--ib);
+}
+
+.round_button .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: 18%;
+    margin-right: 18%;
+    margin-top: 18%;
+    margin-bottom: 18%;
+}
+
+.round_button {
+    width:  var(--elem_size);
+    height: var(--elem_size);
+}
+
+.round_element {
+    min-width:  var(--brdrx2);
+    min-height: var(--brdrx2);
+
+    margin-left:    var(--marg);
+    margin-right:   var(--marg);
+    margin-top:     var(--marg);
+    margin-bottom:  var(--marg);
+    border-top-left-radius:     var(--brdr);
+    border-bottom-left-radius:  var(--brdr);
+    border-top-right-radius:    var(--brdr);
+    border-bottom-right-radius: var(--brdr); 
+}

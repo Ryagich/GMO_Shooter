@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Robot 3
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 5607680520392415485, guid: 6069741f91359e142b99205d89029bfd, type: 3}
-  _enemyCount: 10
-  _duration: 40
+  _enemyCount: 2
+  _duration: 20

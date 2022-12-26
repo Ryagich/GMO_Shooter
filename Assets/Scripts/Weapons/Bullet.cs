@@ -5,8 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(TouchDamager))]
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float speed = 1.0f;
-    [SerializeField] private float time = 1.0f;
+    [SerializeField] private float speed;
 
     private new Rigidbody2D rigidbody2D;
 
@@ -18,13 +17,19 @@ public class Bullet : MonoBehaviour
     public void SetStats(float speed, float damage, float time)
     {
         this.speed = speed;
-        this.time = time;
-        Destroy(gameObject, time);
+        StartCoroutine(DestroySelf(time));
         GetComponent<TouchDamager>().SetDamage(damage);
+    }
+
+    private IEnumerator DestroySelf(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        //pool
+        Destroy(gameObject);
     }
 
     private void FixedUpdate()
     {
-        rigidbody2D.velocity = Time.deltaTime * speed * transform.right ;
+        rigidbody2D.velocity = speed * transform.right;
     }
 }

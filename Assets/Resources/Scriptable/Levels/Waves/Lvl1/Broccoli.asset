@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Broccoli
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 1461355970946356777, guid: 6b89d00d85ee1864399a8a6f5512a405, type: 3}
-  _enemyCount: 10
+  _enemyCount: 2
   _duration: 20

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3d09d9e37e35f4c8f30c662a3658c0, type: 3}
   m_Name: FiveSeven
   m_EditorClassIdentifier: 
-  Weapon: {fileID: 7856563766724796990, guid: 6a727d1e389b64f40b104a6b0bcd9ee0, type: 3}
+  Weapon: {fileID: 1733250026836651319, guid: b34ce277d8fcf8a46a597858173304db, type: 3}
   WeaponSprite: {fileID: 21300000, guid: 9830e4ce5d183d145bdcb9b155a046cd, type: 3}
   Cost: 15
   IsOpen: 0

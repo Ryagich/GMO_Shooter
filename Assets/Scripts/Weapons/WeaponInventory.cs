@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Cinemachine;
+using SaveSystem;
 using UnityEngine;
 
 [RequireComponent(typeof(CinemachineImpulseSource))]
@@ -13,19 +14,14 @@ public class WeaponInventory : MonoBehaviour
     public Weapon ShotGun { get; private set; }
     public Weapon ActiveWeapon { get; private set; }
 
+    [SerializeField] private Transform _weaponsTransform;
+    [SerializeField] private LineRenderer _lineRenderer;
+    [SerializeField] private CinemachineImpulseSource _impulseSource;
 
-    [SerializeField] private Transform _gunPoint;
-
-    private Data data;
-    private BulletsShower bulletsShower;
-    private CinemachineImpulseSource impulseSource;
     private List<Weapon> weapons;
 
     private void Awake()
     {
-        data = PlayerPrefsWrapper.LoadPrefs();
-        bulletsShower = GetComponent<BulletsShower>();
-        impulseSource = GetComponent<CinemachineImpulseSource>();
         weapons = new List<Weapon>();
         CreateWeapons();
         SetActiveWeapon(Pistol);
@@ -33,18 +29,22 @@ public class WeaponInventory : MonoBehaviour
 
     private void CreateWeapons()
     {
-        Pistol = CreateWeapon(data.SelectedPistol);
-        Rifle = CreateWeapon(data.SelectedRifle);
-        ShotGun = CreateWeapon(data.SelectedShotGun);
+        var save = SaveManager.GetInstance();
+        save.Save();
+        save.Load();
+
+        Pistol = CreateWeapon(save.SelectedPistol.Weapon);
+        Rifle = CreateWeapon(save.SelectedRifle.Weapon);
+        ShotGun = CreateWeapon(save.SelectedShotgun.Weapon);
         weapons.Sort((a, b) => b.DPS.CompareTo(a.DPS));
     }
 
     private Weapon CreateWeapon(Weapon weaponPrefab)
     {
-        var w = Instantiate(weaponPrefab, _gunPoint);
-        w.SetImpulseSource(impulseSource);
-        w.BulletsController.OnOutOfBullets += SetBestWeapon;
+        var w = Instantiate(weaponPrefab, _weaponsTransform);
+        w.Init(_lineRenderer, _impulseSource);
         weapons.Add(w);
+        w.BulletsController.OnOutOfBullets += SetBestWeapon;
         return w;
     }
 
@@ -69,7 +69,8 @@ public class WeaponInventory : MonoBehaviour
 
     public void AddBullets(Weapon w, int count)
     {
-        w.BulletsController.AddBullets(count);
-        SetBestWeapon();
+        SetActiveWeapon(w);
+        w.BulletsController.AddBullets(count);        
+        //SetBestWeapon();
     }
 }

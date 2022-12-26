@@ -2,22 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class ParticleController : MonoBehaviour
 {
     [SerializeField] private float _rateMultiplier;
     private ParticleSystem particle;
-    private Rigidbody2D rb;
+    private Vector3 lastPos;
 
     private void Awake()
     {
         particle = GetComponent<ParticleSystem>();
-        rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         var e = particle.emission;
-        e.rateOverTimeMultiplier = Mathf.Abs(rb.velocity.x) * _rateMultiplier;
+        e.rateOverTimeMultiplier = (lastPos - transform.position).magnitude * _rateMultiplier;
+        lastPos = transform.position;
     }
 }

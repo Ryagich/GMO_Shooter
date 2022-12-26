@@ -12,7 +12,7 @@ public class RotateController : MonoBehaviour
 
     private void Update()
     {
-        if (_useMobileInput && _joystick != null)
+        if (_useMobileInput && _joystick)
         {
             if (_joystick.Power > 0.01)
                 rotation = _joystick.Direction;

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Potato
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 1461355970946356777, guid: 37205e25c68313248b6c2b5d21c61a92, type: 3}
-  _enemyCount: 10
+  _enemyCount: 2
   _duration: 20

@@ -1,0 +1,36 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="WeaponShop" src="project://database/Assets/Resources/UI/Layouts/WeaponShop.uxml?fileID=9197481963319205126&amp;guid=3adbd4130e95bff49be70c1474e96976&amp;type=3#WeaponShop" />
+    <Style src="project://database/Assets/Resources/UI/StyleSheets/Tabs.uss?fileID=7433441132597879392&amp;guid=9055b207f7f2a614983a467443350a19&amp;type=3#Tabs" />
+    <Style src="project://database/Assets/Resources/UI/StyleSheets/RoundButtons.uss?fileID=7433441132597879392&amp;guid=8e924ece37e00ba4a8034b98fdfbda6d&amp;type=3#RoundButtons" />
+    <Style src="project://database/Assets/Resources/UI/StyleSheets/WeaponShop.uss?fileID=7433441132597879392&amp;guid=260801f0c0189714e89340d8bd02f90f&amp;type=3#WeaponShop" />
+    <ui:VisualElement style="width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/Materials/UI/Shop/back.png?fileID=2800000&amp;guid=777b1ca922548874ea4de1d7ee351153&amp;type=3#back&apos;); -unity-background-image-tint-color: rgb(195, 195, 195); -unity-background-scale-mode: scale-and-crop;" />
+    <ui:VisualElement name="tab_base" class="tab_base">
+        <ui:VisualElement name="background" class="background" />
+        <ui:VisualElement name="tab_controls" class="tab_controls" style="background-color: rgb(77, 77, 77); align-items: center;">
+            <ui:VisualElement name="tab_weapons" class="round_button tab tab_selected round_element">
+                <ui:VisualElement name="icon" class="icon" style="background-image: url(&apos;project://database/Assets/Materials/UI/Shop/icons/shopping-cart.png?fileID=2800000&amp;guid=c087763ad20e6cd4cb47b2853e1b5f4f&amp;type=3#shopping-cart&apos;);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="tab_upgrades" class="tab round_button round_element tab_selected">
+                <ui:VisualElement name="icon" class="icon" style="background-image: url(&apos;project://database/Assets/Materials/UI/Shop/icons/upgrades.png?fileID=2800000&amp;guid=85f267f917db70f4e8667fd6827eeb7f&amp;type=3#upgrades&apos;);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="play_button" class="round_element default_panel label_big_holder" style="right: 0; position: absolute;">
+                <ui:Label text="Play" display-tooltip-when-elided="true" name="tab_name" class="label_big" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="tab_content" class="tab_content" style="margin-top: 0; padding-top: 0; top: 100px;">
+            <ui:Instance template="WeaponShop" name="WeaponShop" class="weapon_shop_type_base" />
+        </ui:VisualElement>
+        <ui:VisualElement name="tab_info" class="tab_info" style="justify-content: space-between; align-items: stretch; overflow: visible;">
+            <ui:VisualElement name="settings" class="round_button round_element default_panel">
+                <ui:VisualElement name="icon" class="icon" style="background-image: url(&apos;project://database/Assets/Materials/UI/Shop/icons/settings.png?fileID=2800000&amp;guid=0c5cdb9fc44e6384e911714b557c175c&amp;type=3#settings&apos;);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="tab_name" class="round_element default_panel label_big_holder">
+                <ui:Label text="Weapons" display-tooltip-when-elided="true" name="tab_name" class="label_big" />
+            </ui:VisualElement>
+            <CurrentMoney style="justify-content: flex-start;" />
+            <ui:VisualElement name="ads_rewarded" class="round_button round_element default_panel">
+                <ui:VisualElement name="icon" class="icon" style="background-image: url(&apos;project://database/Assets/Materials/UI/Shop/icons/present_box.png?fileID=2800000&amp;guid=3412561937687c746aeb2f3d1a8cb272&amp;type=3#present_box&apos;);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

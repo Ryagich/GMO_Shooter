@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Cabage
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 1461355970946356777, guid: 4d9d220ab93d23744a79cabdc61b7bff, type: 3}
-  _enemyCount: 10
+  _enemyCount: 2
   _duration: 20

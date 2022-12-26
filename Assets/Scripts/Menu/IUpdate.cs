@@ -7,4 +7,6 @@ public interface IUpdate
     public bool IsOpen { get; set; }
 
     public int Cost { get; set; }
+
+    public ScriptableObject ScriptableObject { get; }
 }
